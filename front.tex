@@ -283,10 +283,237 @@
               \item 老手一般用第一种，因为熟练有大局观
           \end{itemize}
 \end{enumerate}
-\subsubsection{布局需要的属性即布局套路}
-
+\subsubsection{float布局}
+一图流(图片以后贴出)
+\begin{enumerate}
+    \item float布局
+          \begin{itemize}
+              \item 子元素加上float:left和width
+              \item \red{在父元素上加.clearfix}
+          \end{itemize}
+    \item float布局经验
+          \begin{itemize}
+              \item 留一些空间或者最后一个不设width
+              \item 不需要做响应式，因为手机上没有IE，而这个布局是专门为IE准备的
+              \item 解决IE6/7存在的双倍 margin bug如下
+              \item 一是将错就错，针对IE6/7把margin减半
+              \item 二是神来一笔，再加一个display:inline-block
+          \end{itemize}
+\end{enumerate}
+\paragraph{float布局实践}
+\begin{enumerate}
+    \item 不同布局
+          \begin{itemize}
+              \item 用float做两栏布局(如顶部条)
+              \item 用float做三栏布局(如内容区)
+              \item 用float做四栏布局(如导航)
+              \item 用float做平均布局(如产品展示区)
+              \item \url{http://js.jirengu.com/wiwuh/3/edit?html,css,output}
+          \end{itemize}
+    \item 实践经验
+          \begin{itemize}
+              \item 加上头尾，即可满足所有PC页面需求
+              \item 手机页面傻子采用float
+              \item float要程序员自己计算宽度，不灵活
+              \item float用来应付IE足矣
+          \end{itemize}
+\end{enumerate}
+\subsubsection{Flex布局}
+\begin{enumerate}
+    \item 重点
+          \begin{itemize}
+              \item display：flex
+              \item flex-direction：row/column
+              \item flex-wrap:wrap
+              \item just-content:center/space-between
+              \item align-item:center
+          \end{itemize}
+    \item 颜色
+          \begin{itemize}
+              \item 十六进制\#FF6600或者\#F60
+              \item RGBA颜色rgb(0,0,0)或者rgba(0,0,0,1)
+              \item hsl颜色hsl(360,100$\%$, 100$\%$)
+          \end{itemize}
+    \item 实践
+          \begin{itemize}
+              \item 用flex做两栏布局
+              \item 用flex做三栏布局
+              \item 用flex做四栏布局
+              \item 用flex做平均布局
+              \item 用flex组合使用，做更复杂的布局
+              \item \url{http://js.jirengu.com/pakez/2/edit?html,css,output}
+          \end{itemize}
+    \item 经验
+          \begin{itemize}
+              \item 永远不要把width和height写死，除非特殊说明
+              \item 用min-width/max-width/min-height/max-height
+              \item flex可以基本满足所有需求
+              \item flex和margin-xxx：auto配合有意外的效果
+          \end{itemize}
+    \item 什么是写死
+          \begin{itemize}
+              \item width:100px
+          \end{itemize}
+    \item 不写死
+          \begin{itemize}
+              \item width:50\%
+              \item max-width:100px
+              \item width:30vw
+              \item min-width:80\%
+              \item 特点：不使用px，或者加min max前缀
+          \end{itemize}
+\end{enumerate}
+\subsubsection{Grid布局}
+\red{二维布局用Grid，一维布局用Flex}
+\paragraph{语法}
+\paragraph{例子和语法}
 \subsection{定位}
+\red{布局与定位的区别是：布局是屏幕平面上的，定位是垂直于屏幕的}
+\subsubsection{一个div的分层}
+\subsubsection{positon的五个取值}
+\subsubsection{层叠上下文}
 \subsection{动画}
+\subsubsection{动画的原理}
+\subsubsection{浏览器渲染的原理}
+\paragraph{浏览器渲染过程}
+\begin{enumerate}
+    \item 根据HTML构建HTML树(DOM)
+    \item 根据CSS构建CSS树(CSSOM)
+    \item 将两颗树合并成一颗渲染树(render tree)
+    \item Layout布局(文档流，盒模型，计算大小和位置)
+    \item Paint绘制(把边框颜色，文字颜色，阴影等画出来)
+    \item Compose合成(根据层叠关系展示画面)
+\end{enumerate}
+\paragraph{三棵树}
+图片以后放
+\paragraph{如何更新样式}
+\red{一般我们采用JS来更新样式}
+\begin{enumerate}
+    \item 比如div.style.background='red'
+    \item 比如div.style.display='none'
+    \item 比如div.classList.add('red')
+    \item 比如div.remove()直接删掉节点
+\end{enumerate}
+\paragraph{三种更新方式}
+\begin{enumerate}
+    \item JS/CSS > 样式 > 布局 > 绘制 > 合成
+    \item JS/CSS > 样式 > 绘制 > 合成
+    \item JS/CSS > 样式 > 合成
+\end{enumerate}
+\paragraph{三种更新方式区别}
+\begin{enumerate}
+    \item 第一种，全走
+          \begin{itemize}
+              \item div.remove()会触发当前消失，其他元素relayout
+              \item \url{http://js.jirengu.com/jagel/1/edit?html,css,js,output}
+          \end{itemize}
+    \item 第二种，跳过layout
+          \begin{itemize}
+              \item 改变背景颜色，直接repaint+composite
+              \item \url{http://js.jirengu.com/jidam/1/edit?html,css,js,output}
+          \end{itemize}
+    \item 第三种，跳过layout和paint
+          \begin{itemize}
+              \item 改变transform，只需composite
+              \item 注意必须全屏查看效果，在iframe里看有问题
+              \item \url{http://js.jirengu.com/wusew/1}
+          \end{itemize}
+\end{enumerate}
+\subsubsection{CSS动画优化}
+\paragraph{JS优化}
+\begin{enumerate}
+    \item 使用requestAnimationFrame代替setTimeout或setInterval
+\end{enumerate}
+\paragraph{JS优化}
+\begin{enumerate}
+    \item 使用will-change或translate
+\end{enumerate}
+\paragraph{参考文章}
+\subsubsection{transition}
+\red{位移translate\quad  缩放scale\quad 旋转rotate\quad  倾斜skew}
+\paragraph{经验}
+\begin{enumerate}
+    \item 一般都不需要配合transition过度
+    \item inline元素不支持transform，需要先变成block
+\end{enumerate}
+\paragraph{translate}
+\begin{enumerate}
+    \item 常用写法
+          \begin{itemize}
+              \item translateX(<length-percentage>)
+              \item translateY(<length-percentage>)
+              \item translate(<length-percentage>, <length-percentage>?)
+              \item translateZ(<length>)且父容器perspective
+              \item translate3d(x,y,z)
+              \item 演示\url{http://js.jirengu.com/xidiy/1/edit?html,css,output}
+          \end{itemize}
+    \item 经验
+          \begin{itemize}
+              \item 看懂MDN语法示例
+              \item translate(-50\%, -50\%)可做绝对定位元素的居中
+          \end{itemize}
+\end{enumerate}
+\paragraph{scale}
+\begin{enumerate}
+    \item 常用写法
+          \begin{itemize}
+              \item scaleX(<number>)
+              \item scaleX(<number>)
+              \item scaleX(<number>, <number>?)
+              \item 演示\url{http://js.jirengu.com/jucal/1/edit?html,css,output}
+          \end{itemize}
+    \item 经验
+          \begin{itemize}
+              \item 用的少
+          \end{itemize}
+\end{enumerate}
+\paragraph{rotate}
+\begin{enumerate}
+    \item 常用写法
+          \begin{itemize}
+              \item rotate([<angle>|<zero>])
+              \item rotateZ([<angle>|<zero>])
+              \item rotateX([<angle>|<zero>])
+              \item rotateY([<angle>|<zero>])
+              \item rotate3d太复杂
+              \item 演示\url{http://js.jirengu.com/jiquq/1/edit?html,css,output}
+          \end{itemize}
+    \item 经验
+          \begin{itemize}
+              \item 一般用于360度选择制作loading
+              \item 用到的时候查rotate MDN文档
+          \end{itemize}
+\end{enumerate}
+\paragraph{skew}
+\begin{enumerate}
+    \item 常用写法
+          \begin{itemize}
+              \item skewX([<angle>|<zero>])
+              \item skewY([<angle>|<zero>])
+              \item skew([<angle>|<zero>],[<angle>|<zero>]?)
+              \item 演示\url{http://js.jirengu.com/tazer/1/edit?html,css,output}
+          \end{itemize}
+    \item 经验
+          \begin{itemize}
+              \item 用的较少
+              \item 用到的时候查skew MDN文档
+          \end{itemize}
+\end{enumerate}
+\paragraph{transform多重效果}
+\begin{enumerate}
+    \item 组合使用
+          \begin{itemize}
+              \item transform:scale(0.5) translate(-100\%, -100\%);
+              \item transform:none;取消所有
+          \end{itemize}
+\end{enumerate}
+\paragraph{参考文章}
+\subsubsection{transition过渡}
+\red{作用是补充中间帧}
+\subsubsection{红心实践}
+\red{css需要想象力}
+\p
+\red{http://js.jirengu.com/nonud/1/edit?html,css,output}
 \section{HTTP}
 \section{JS}
 \section{算法与数据结构}

@@ -27,18 +27,47 @@
 \contentsline {subsection}{\numberline {4.2}布局}{7}%
 \contentsline {subsubsection}{\numberline {4.2.1}布局分类}{7}%
 \contentsline {subsubsection}{\numberline {4.2.2}两种布局思路}{8}%
-\contentsline {subsubsection}{\numberline {4.2.3}布局需要的属性即布局套路}{8}%
-\contentsline {subsection}{\numberline {4.3}定位}{8}%
-\contentsline {subsection}{\numberline {4.4}动画}{8}%
-\contentsline {section}{\numberline {5}HTTP}{8}%
-\contentsline {section}{\numberline {6}JS}{8}%
-\contentsline {section}{\numberline {7}算法与数据结构}{8}%
-\contentsline {section}{\numberline {8}JS编程接口}{8}%
-\contentsline {section}{\numberline {9}项目}{8}%
-\contentsline {section}{\numberline {10}MVC}{8}%
-\contentsline {section}{\numberline {11}Webpack}{8}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{8}%
-\contentsline {section}{\numberline {13}Vue}{8}%
-\contentsline {section}{\numberline {14}React}{8}%
-\contentsline {section}{\numberline {15}NodeJS}{8}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{8}%
+\contentsline {subsubsection}{\numberline {4.2.3}float布局}{8}%
+\contentsline {paragraph}{float布局实践}{8}%
+\contentsline {subsubsection}{\numberline {4.2.4}Flex布局}{9}%
+\contentsline {subsubsection}{\numberline {4.2.5}Grid布局}{9}%
+\contentsline {paragraph}{语法}{9}%
+\contentsline {paragraph}{例子和语法}{10}%
+\contentsline {subsection}{\numberline {4.3}定位}{10}%
+\contentsline {subsubsection}{\numberline {4.3.1}一个div的分层}{10}%
+\contentsline {subsubsection}{\numberline {4.3.2}positon的五个取值}{10}%
+\contentsline {subsubsection}{\numberline {4.3.3}层叠上下文}{10}%
+\contentsline {subsection}{\numberline {4.4}动画}{10}%
+\contentsline {subsubsection}{\numberline {4.4.1}动画的原理}{10}%
+\contentsline {subsubsection}{\numberline {4.4.2}浏览器渲染的原理}{10}%
+\contentsline {paragraph}{浏览器渲染过程}{10}%
+\contentsline {paragraph}{三棵树}{10}%
+\contentsline {paragraph}{如何更新样式}{10}%
+\contentsline {paragraph}{三种更新方式}{10}%
+\contentsline {paragraph}{三种更新方式区别}{11}%
+\contentsline {subsubsection}{\numberline {4.4.3}CSS动画优化}{11}%
+\contentsline {paragraph}{JS优化}{11}%
+\contentsline {paragraph}{JS优化}{11}%
+\contentsline {paragraph}{参考文章}{11}%
+\contentsline {subsubsection}{\numberline {4.4.4}transition}{11}%
+\contentsline {paragraph}{经验}{11}%
+\contentsline {paragraph}{translate}{11}%
+\contentsline {paragraph}{scale}{12}%
+\contentsline {paragraph}{rotate}{12}%
+\contentsline {paragraph}{skew}{12}%
+\contentsline {paragraph}{transform多重效果}{12}%
+\contentsline {paragraph}{参考文章}{12}%
+\contentsline {subsubsection}{\numberline {4.4.5}transition过渡}{13}%
+\contentsline {subsubsection}{\numberline {4.4.6}红心实践}{13}%
+\contentsline {section}{\numberline {5}HTTP}{13}%
+\contentsline {section}{\numberline {6}JS}{13}%
+\contentsline {section}{\numberline {7}算法与数据结构}{13}%
+\contentsline {section}{\numberline {8}JS编程接口}{13}%
+\contentsline {section}{\numberline {9}项目}{13}%
+\contentsline {section}{\numberline {10}MVC}{13}%
+\contentsline {section}{\numberline {11}Webpack}{13}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{13}%
+\contentsline {section}{\numberline {13}Vue}{13}%
+\contentsline {section}{\numberline {14}React}{13}%
+\contentsline {section}{\numberline {15}NodeJS}{13}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{13}%
