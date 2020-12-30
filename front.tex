@@ -6,6 +6,7 @@
 \usepackage{amsmath,amssymb,amsfonts}%equation need this 
 \usepackage{bm}
 \usepackage{listings}
+\usepackage{url}
 \newcommand{\red}[1]{{\color{red}{#1}}}
 \newcommand{\green}[1]{{\color{green}{#1}}}
 \newcommand{\p}{\par }
@@ -130,8 +131,162 @@
 \subsection{命令行入门}
 \subsection{本地仓库}
 \subsection{远程仓库}
-\section{HTML全解}
+\section{HTML}
+\subsection{概览}
+\subsection{标签}
+\subsection{重难点}
+\subsection{实践和手机调试}
 \section{CSS}
+\subsection{基础}
+\subsubsection{语法}
+\subsubsection{Border调试法}
+\subsubsection{文档流}
+\begin{enumerate}
+    \item 文档流的基本概念
+          \begin{itemize}
+              \item 流动方向
+                    \begin{itemize}
+                        \item inline元素从左到右，到达最右边才会换行
+                        \item block元素从上到下，每一个都另起一行
+                        \item inline-block也是从左到右
+                    \end{itemize}
+              \item 宽度
+                    \begin{itemize}
+                        \item inline宽度为内部inline元素的和，不能用width指定
+                        \item block默认自动计算宽度，可用width指定
+                        \item inline-block结合前两者特点，可用width
+                    \end{itemize}
+              \item 高度
+                    \begin{itemize}
+                        \item inline高度由line-height间接确定，跟height无关
+                        \item block高度由文档流元素决定，可以设height
+                        \item inline-block跟block类似，可以设置height
+                    \end{itemize}
+          \end{itemize}
+    \item overflow 溢出
+          \begin{itemize}
+              \item 当内容大于容器
+                    \begin{itemize}
+                        \item 等内容的宽度或高度大于容器，会溢出
+                        \item 可用overflow来设置是否显示滚动条
+                        \item auto是灵活设置
+                        \item scroll是永远显示
+                        \item hidden是直接隐藏溢出部分
+                        \item visible是直接显示溢出部分
+                        \item overflow可以分为overflow-x和overflow-y
+                    \end{itemize}
+          \end{itemize}
+    \item 脱离文档流
+          \begin{itemize}
+              \item 有些元素可不在文档流
+                    \begin{itemize}
+                        \item 原因是block高度由内部文档流元素决定，可以设height
+                    \end{itemize}
+              \item 以下元素脱离文档流
+                    \begin{itemize}
+                        \item float
+                        \item position:absolute/fixed
+                    \end{itemize}
+              \item 不用以上属性就不脱离文档流
+          \end{itemize}
+\end{enumerate}
+\subsubsection{盒模型}
+\begin{enumerate}
+    \item 两种
+          \begin{itemize}
+              \item content-box内容盒 - 内容就是盒子的边界
+              \item border-box边框盒 - 边框才是盒子的边界
+          \end{itemize}
+    \item 公式
+          \begin{itemize}
+              \item content-box width = 内容宽度
+              \item border-box width = 内容宽度 + padding + border
+          \end{itemize}
+    \item 哪个好用？
+          \begin{itemize}
+              \item border-box好用
+              \item 因为可以同时指定padding, width, border
+          \end{itemize}
+\end{enumerate}
+\subsubsection{margin合并}
+\begin{enumerate}
+    \item 哪些情况会合并
+          \begin{itemize}
+              \item 父子margin合并
+              \item 兄弟margin合并
+          \end{itemize}
+    \item 如何阻止合并
+          \begin{itemize}
+              \item 父子合并用padding/border挡住
+              \item 父子合并用overflow:hidden挡住
+              \item 父子合并用display:flex
+              \item 兄弟合并是符合预期的
+              \item 兄弟合并可以用inline-block消除
+              \item css属性逐年增多，每年都有新的，死记就完事了
+          \end{itemize}
+\end{enumerate}
+\subsubsection{基本单位}
+\begin{enumerate}
+    \item 长度单位
+          \begin{itemize}
+              \item px像素
+              \item em相对于自身font-size的倍数
+              \item 百分数
+              \item 整数
+              \item rem
+              \item vw和vh
+          \end{itemize}
+    \item 颜色
+          \begin{itemize}
+              \item 十六进制\#FF6600或者\#F60
+              \item RGBA颜色rgb(0,0,0)或者rgba(0,0,0,1)
+              \item hsl颜色hsl(360,100$\%$, 100$\%$)
+          \end{itemize}
+\end{enumerate}
+\subsubsection{练手项目}
+\red{彩虹demo}
+\pl
+\url{http://js.jirengu.com/xacet/1/edit?html,css,output}
+\subsection{布局}
+\subsubsection{布局分类}
+\begin{enumerate}
+    \item 两种
+          \begin{itemize}
+              \item 固定宽度布局，一般宽度为960/1000/1024px
+              \item 不固定宽度布局，主要靠文档流的原来布局
+          \end{itemize}
+    \item 回顾
+          \begin{itemize}
+              \item 文档流本来就是自适应的，不需要加额外的样式
+          \end{itemize}
+    \item 响应式布局
+          \begin{itemize}
+              \item PC上固定宽度，手机上不固定宽度
+              \item 也就是一种混合布局
+          \end{itemize}
+\end{enumerate}
+\subsubsection{两种布局思路}
+\begin{enumerate}
+    \item 从大到小
+          \begin{itemize}
+              \item 先定下大局
+              \item 然后完善每个部分的小布局
+          \end{itemize}
+    \item 从小到大
+          \begin{itemize}
+              \item 先完成小布局
+              \item 然后组合成大布局
+          \end{itemize}
+    \item 两种均可
+          \begin{itemize}
+              \item 新人推荐第二种，因为小的简单
+              \item 老手一般用第一种，因为熟练有大局观
+          \end{itemize}
+\end{enumerate}
+\subsubsection{布局需要的属性即布局套路}
+
+\subsection{定位}
+\subsection{动画}
 \section{HTTP}
 \section{JS}
 \section{算法与数据结构}
