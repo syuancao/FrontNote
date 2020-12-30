@@ -515,6 +515,161 @@
 \p
 \red{http://js.jirengu.com/nonud/1/edit?html,css,output}
 \section{HTTP}
+\red{Hyper Text Transfer Protocol}
+\subsection{URL}
+\red{Uniform Resource Locator}
+\pl
+\red{协议+域名或IP+端口号+路径+查询字符串+锚点}
+\subsubsection{IP}
+\red{Internet Protocal}
+\begin{enumerate}
+    \item 约定了两件事
+          \begin{itemize}
+              \item 如何定位一台设备
+              \item 如何封装数据报文，以跟其他设备交流
+          \end{itemize}
+    \item 外网IP
+          \begin{itemize}
+              \item 从电信租用带宽，一年一千多。
+              \item 买了路由器，然后用电脑和手机分别连接路由器广播出来的无线WIFI。
+              \item 路由器连上电信服务器，路由器有一个外围IP，这是你互联网中的地址。
+              \item 重启路由器可能会被重新分配外围IP，也就是路由器没有固定的外网IP。
+              \item 连接路由器的手机和电脑是内网IP。
+          \end{itemize}
+    \item 内网IP
+          \begin{itemize}
+              \item 路由器会在家里创建一个内网，内网设备使用内网IP，一般是192.169.xxx.xxx。
+              \item 一般路由器会给自己分配一个好记的内网IP，如192.168.1.1。
+              \item 然后路由器会给每一个内网中的设备分配不同的内网IP。
+              \item  如电脑是192.168.1.2，手机是192.168.1.3。
+          \end{itemize}
+    \item 路由器的功能
+          \begin{itemize}
+              \item 现在路由器会有两个IP，一个外网IP和一个内网IP。
+              \item 内网的设备可以互相访问，但是不能直接访问外网。
+              \item 内网设备想要访问外围，就必须经过路由器中转。
+              \item 外网中的设备可以互相访问，但是无法访问你的内网。
+              \item 外网设备想要把内容送到内网，也必须通过路由器。
+              \item 也就是说内网和外网就像两个隔绝的空间，无法互通，唯一的联通点就是路由器。
+              \item 所以路由器有时候也被叫做网关。
+          \end{itemize}
+    \item 几个特殊的IP
+          \begin{itemize}
+              \item 127.0.0.1表示自己。
+              \item localhost通过hosts指定为自己。
+              \item 0.0.0.0不表示任何设备。
+          \end{itemize}
+\end{enumerate}
+\subsubsection{端口}
+\red{一台机器可以提供很多服务，每个服务一个号码，这个号码就叫端口号port}
+\begin{enumerate}
+    \item 一个比喻
+          \begin{itemize}
+              \item 麦当劳提供两个窗口，一号快餐，二号咖啡。
+              \item 你去快餐窗口点咖啡会被拒绝，让你去两一个窗口。
+              \item 你去咖啡窗口点快餐结果一样。
+          \end{itemize}
+    \item 一台机器可以提供不同服务
+          \begin{itemize}
+              \item 要提供HTTP服务最好使用80端口。
+              \item 要提供HTTPS服务最好使用443端口。
+              \item 要提供FTP服务最好使用21端口。
+              \item 一共有65535个端口(基本够用)。
+          \end{itemize}
+    \item 端口使用规则
+          \begin{itemize}
+              \item 0到1023(2的10次方减1)号端口是留给系统使用的。
+              \item 你只有拥有了管理员权限后，才能使用这1024个端口。
+              \item 其他端口可以给普通用户使用。
+              \item 比如http-server默认使用8080端口。
+              \item 一个端口如果被占用，你就只能换一个端口。
+          \end{itemize}
+\end{enumerate}
+\subsubsection{域名}
+\begin{enumerate}
+    \item 域名就是IP的别称
+          \begin{itemize}
+              \item baidu.com对应的什么IP --> ping baidu.com
+              \item qq.com对应的什么IP --> ping qq.com
+              \item 一个域名可以对应不同IP。
+              \item 这个叫做均衡负载，防止一台机器扛不住。
+              \item 一个IP可以对应不同域名。
+              \item 这个叫做共享主机，穷开发者会这么做。
+          \end{itemize}
+    \item 域名和IP是怎么对应起来的
+          \begin{itemize}
+              \item 通过DNS
+          \end{itemize}
+    \item 当你输入qq.com的过程
+          \begin{itemize}
+              \item 你的Chrome浏览器会向电信提供的DNS服务器询问qq.com对应什么IP。
+              \item 电信会回答一个IP(具体过程很发杂，不研究)。
+              \item 然后Chrome才会向对应IP的80/443端口发送请求。
+              \item 请求内容是查看qq.com的首页。
+          \end{itemize}
+    \item 为什么是80或443端口
+          \begin{itemize}
+              \item 服务器默认用80提供http服务。
+              \item 服务器默认用443提供https服务。
+              \item 可以在开发者工具看到具体的端口。
+          \end{itemize}
+    \item 题外话
+          \begin{itemize}
+              \item www.caosiyuan.com和caosiyuan.com不是同一域名。
+              \item comn是顶级域名。
+              \item caosiyuan.com是二级域名(俗称一级域名)。
+              \item www.caosiyuan.com是三级域名(俗称二级)。
+              \item 他们是父子关系
+              \item 比如github.io把子域名xx.github.io免费给你使用
+              \item 但www.caosiyuan.com和caosiyuan.com可以不是同一家公司，也可以是。
+              \item www非常多余
+          \end{itemize}
+    \item 如何请求不同的页面
+          \begin{itemize}
+              \item 路径可以做到
+              \item \url{https://developer.mozilla.org/zh-CN/docs/Web/HTML}
+              \item \url{https://developer.mozilla.org/zh-CN/docs/Web/CSS}
+              \item 使用chrome开发者工具Network面板看区别。
+              \item 有点类似爬虫找规律。
+          \end{itemize}
+    \item 同一个页面，不同内容
+          \begin{itemize}
+              \item 查询参数可以做到
+              \item \url{http://www.baidu.com/s?wd=hi}
+              \item \url{http://www.baidu.com/s?wd=hello}
+          \end{itemize}
+    \item 同一个页面，不同位置
+          \begin{itemize}
+              \item 锚点可以做到
+              \item \url{https://developer.mozilla.org/zh-CN/docs/Web/CSS#参考书}
+              \item \url{https://developer.mozilla.org/zh-CN/docs/Web/CSS#教程}
+              \item 注意，锚点看起来有中文，但实际不支持中文。
+              \item \# 参考书会变成\#\s{\%E5\%8F\dots}。
+              \item 锚点是无法在Network面板看到。
+              \item 锚点不会传给服务器。
+          \end{itemize}
+\end{enumerate}
+\subsubsection{HTTP协议}
+\red{基于TCP和IP两个协议，规定了请求的格式是什么，响应的格式是什么}
+\begin{enumerate}
+    \item 用curl可以发HTTP请求
+          \begin{itemize}
+              \item curl -v http://baidu.com
+              \item curl -s -v -- https://www.baidu.com
+          \end{itemize}
+    \item 理解一下概念
+          \begin{itemize}
+              \item url会被curl工具重写，先请求DNS获得IP
+              \item 先进行TCP连接，TCP连接成功后，开始发送HTTP请求
+              \item 请求内容看一眼
+              \item 响应内容看一眼
+              \item 响应结束后，关闭TCP连接(看不出来)
+              \item 真正结束
+          \end{itemize}
+\end{enumerate}
+\subsubsection{网络}
+\subsubsection{网络}
+\subsection{请求响应和NodeJS Sever}
 \section{JS}
 \section{算法与数据结构}
 \section{JS编程接口}

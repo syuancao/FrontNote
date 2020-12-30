@@ -60,14 +60,22 @@
 \contentsline {subsubsection}{\numberline {4.4.5}transition过渡}{13}%
 \contentsline {subsubsection}{\numberline {4.4.6}红心实践}{13}%
 \contentsline {section}{\numberline {5}HTTP}{13}%
-\contentsline {section}{\numberline {6}JS}{13}%
-\contentsline {section}{\numberline {7}算法与数据结构}{13}%
-\contentsline {section}{\numberline {8}JS编程接口}{13}%
-\contentsline {section}{\numberline {9}项目}{13}%
-\contentsline {section}{\numberline {10}MVC}{13}%
-\contentsline {section}{\numberline {11}Webpack}{13}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{13}%
-\contentsline {section}{\numberline {13}Vue}{13}%
-\contentsline {section}{\numberline {14}React}{13}%
-\contentsline {section}{\numberline {15}NodeJS}{13}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{13}%
+\contentsline {subsection}{\numberline {5.1}URL}{13}%
+\contentsline {subsubsection}{\numberline {5.1.1}IP}{13}%
+\contentsline {subsubsection}{\numberline {5.1.2}端口}{14}%
+\contentsline {subsubsection}{\numberline {5.1.3}域名}{14}%
+\contentsline {subsubsection}{\numberline {5.1.4}HTTP协议}{16}%
+\contentsline {subsubsection}{\numberline {5.1.5}网络}{16}%
+\contentsline {subsubsection}{\numberline {5.1.6}网络}{16}%
+\contentsline {subsection}{\numberline {5.2}请求响应和NodeJS Sever}{16}%
+\contentsline {section}{\numberline {6}JS}{16}%
+\contentsline {section}{\numberline {7}算法与数据结构}{16}%
+\contentsline {section}{\numberline {8}JS编程接口}{16}%
+\contentsline {section}{\numberline {9}项目}{16}%
+\contentsline {section}{\numberline {10}MVC}{16}%
+\contentsline {section}{\numberline {11}Webpack}{16}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{16}%
+\contentsline {section}{\numberline {13}Vue}{16}%
+\contentsline {section}{\numberline {14}React}{16}%
+\contentsline {section}{\numberline {15}NodeJS}{16}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{16}%
