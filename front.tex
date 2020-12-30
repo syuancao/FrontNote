@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb,amsfonts}%equation need this 
+\usepackage{bm}
+\usepackage{listings}
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand{\green}[1]{{\color{green}{#1}}}
+\newcommand{\p}{\par }
+\newcommand{\pl}{\par \ \par}
+\newcommand{\s}[1]{${#1}$}
+
+\title{前端基础笔记}
+\author{曹思远}
+\date{\today}
+\usepackage[a4paper, left = 10mm, right = 10mm, top = 15mm, bottom = 15mm]{geometry}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\begin{abstract}
+    前端基础笔记
+\end{abstract}
+
+\section{软件安装}
+\subsection{必备软件列表}
+\begin{enumerate}
+    \item vscode
+    \item cmder
+    \item chrome
+    \item clash
+    \item NodeJS, Yarn
+\end{enumerate}
+\subsubsection{必备软件配置}
+\red{任何软件都需要配置}
+\paragraph{vscode}
+\begin{enumerate}
+    \item 必备插件
+          \begin{itemize}
+              \item Chinese (Simplified) Language Pack for Visual Studio Code
+              \item Code Spell Checker
+              \item Git Easy
+              \item Latex Workshop
+              \item Markdown All in One
+              \item Prettier - Code formatter
+          \end{itemize}
+    \item 环境和快捷键配置
+          \begin{itemize}
+              \item 具体看我知乎保存的setting.json 和 keybinding.json
+          \end{itemize}
+    \item 快捷键
+          \begin{itemize}
+              \item ctrl + p - 找文件
+              \item ctrl + shift + p 或 F1 - 输命令
+              \item alt + 单击 - 多位置输入
+          \end{itemize}
+\end{enumerate}
+\paragraph{cmder}
+\begin{enumerate}
+    \item 配置内容较多，直接看我保存的配置文件。
+    \item 将cmder加入右键菜单，加入环境变量。
+\end{enumerate}
+\paragraph{chrome}
+\begin{enumerate}
+    \item 可选插件
+          \begin{itemize}
+              \item Proxy SwitchOmega
+              \item uBlock
+          \end{itemize}
+    \item 高级用户配置
+          \begin{itemize}
+              \item 在开发者工具\red{里面}按ESC可以新建控制台
+              \item Sources面板可以保存代码片段(Snippets)
+              \item Network关掉show overview，filter可以搜素，右击勾选Method
+              \item Network可模拟慢网速/断网
+              \item Preserve log不会清空当前请求数据
+              \item Disable cache清除缓存
+          \end{itemize}
+    \item chrome常用快捷键
+          \begin{itemize}
+              \item 鼠标中键单击 - 打开或关闭
+              \item ctrl + T - 新开标签
+              \item ctrl + shift + T - 撤销关闭
+              \item ctrl + 点击 - 在新标签打开
+              \item ctrl + W - 关闭当前标签
+              \item ctrl + Reload 或者 F5 - 刷新
+              \item ctrl + Location - 输入网址
+              \item ctrl + shift + Inspector 或 F12 - 打开开发者工具
+              \item alt + 左右 - 前进后退
+              \item alt + 回车 - 在新标签打开
+              \item shift + 回车 - 在新窗口打开
+              \item ctrl + shift + delete - 删除历史浏览数据
+          \end{itemize}
+\end{enumerate}
+\paragraph{windows}
+\begin{enumerate}
+    \item 关掉任务栏无用标签，卸载无用软件。(如搜索框，任务视图，微软小娜Cortana，开始菜单里的各种贴图)
+    \item 可安装TranslucentTB使任务栏透明
+    \item 理解用户目录，即 C:\verb|\|Users\verb|\|Jony，分别右击用户目录里的下载和文件，属性-->位置-->移动到E盘。
+    \item 显示文件后缀，打开查看-->选项-->查看，去掉隐藏已知文件扩展名，勾选显示已知文件，文件夹和驱动器。
+    \item 记住组合键\begin{itemize}
+              \item Win组合键
+                    \begin{enumerate}
+                        \item win + Desktop - 展示桌面
+                        \item win + 方向键 - 移动窗口
+                        \item alt + tab - 切换窗口
+                        \item win + tab - 不怎么常用的切换窗口
+                        \item win + ctrl + 方向键 - 切换桌面
+                    \end{enumerate}
+              \item Ctrl组合键
+                    \begin{enumerate}
+                        \item ctrl + All/ctrl + Copy/ctrl + V/ctrl + Z/ctrl + Y
+                        \item ctrl + Reload/F5
+                        \item ctrl + P - 打印
+                    \end{enumerate}
+          \end{itemize}
+\end{enumerate}
+\paragraph{NodeJS, Yarn}
+\begin{enumerate}
+    \item 开发必装的东西
+          \begin{itemize}
+              \item nrm
+              \item tldr
+          \end{itemize}
+\end{enumerate}
+\section{Git入门}
+\subsection{命令行入门}
+\subsection{本地仓库}
+\subsection{远程仓库}
+\section{HTML全解}
+\section{CSS}
+\section{HTTP}
+\section{JS}
+\section{算法与数据结构}
+\section{JS编程接口}
+\section{项目}
+\section{MVC}
+\section{Webpack}
+\section{虚拟DOM与DOM diff}
+\section{Vue}
+\section{React}
+\section{NodeJS}
+\section{Vue3造轮子}
+
+\end{document}
