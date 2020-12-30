@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.29)  30 DEC 2020 21:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.29)  30 DEC 2020 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -558,8 +558,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count317
 \l__xeCJK_listings_flag_int=\count318
-)
-No file front.aux.
+) (./front.aux)
 \openout1 = `front.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -578,7 +577,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
-ABD: EverySelectfont initializing macros
+ ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 21.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
@@ -680,14 +679,13 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
  (d:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-No file front.toc.
+) (./front.toc [1
+
+])
 \tf@toc=\write4
 \openout4 = `front.toc'.
 
-[1
-
-] [2]
+ [2] [3]
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -711,52 +709,20 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
- [3] [4] [5] [6] [7] [8] [9] [10]
-
-./front.tex:469: LaTeX Error: \begin{itemize} on input line 459 ended by \end{enumerate}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.469 \end{enumerate}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[11] [12] [13]
+ [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
 Missing character: There is no 参 in font [lmmono10-regular]:!
 Missing character: There is no 考 in font [lmmono10-regular]:!
 Missing character: There is no 书 in font [lmmono10-regular]:!
 Missing character: There is no 教 in font [lmmono10-regular]:!
 Missing character: There is no 程 in font [lmmono10-regular]:!
- [14] [15]
-
-./front.tex:686: LaTeX Error: \begin{enumerate} on input line 457 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.686 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(./front.aux) )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 457 (\begingroup)
-### bottom level 
+ [15] [16] (./front.aux) ) 
 Here is how much of TeX's memory you used:
- 20109 strings out of 479418
- 454638 string characters out of 5888104
- 728703 words of memory out of 5000000
+ 20113 strings out of 479418
+ 454678 string characters out of 5888104
+ 727703 words of memory out of 5000000
  37225 multiletter control sequences out of 15000+600000
  545745 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,6n,68p,447b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on front.pdf (15 pages).
+Output written on front.pdf (16 pages).
