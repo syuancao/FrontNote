@@ -698,7 +698,6 @@
           \end{itemize}
 \end{enumerate}
 \subsubsection{JS的历史}
-\red{学会以唯物历史观结合国内互联网公司比如淘宝公司的历史来看待JS的历史}
 \begin{enumerate}
     \item JavaScript的诞生
           \begin{itemize}
@@ -738,10 +737,74 @@
               \item 同年，TJ受Sinatra启发，发布了Express.js。
               \item 至此，前端工程师可以愉快的写后端应用了。
               \item 至此，爆发了很多技术了，gulp，grunt，yeoman，requireJs，webpack等。
-              \item JS是历史的选择，一开始是玩具，但JS走对了风口，所有活到了最后。
+              \item JS是历史的选择，一开始是玩具，但JS走对了风口，所以活到了最后。
               \item 总结：类似考研政治，历史人物可以影响事物的进程，但决定不了历史的发展的方向。
           \end{itemize}
 \end{enumerate}
+\subsection{内存图与JS世界}
+\subsubsection{操作系统常识}
+\red{一切都运行在内存里}
+\begin{enumerate}
+    \item 开机
+          \begin{itemize}
+              \item 操作系统在C盘里(macOS的在根目录下多个目录里)
+              \item 当按下开机键，主板通电，开始读取固件
+              \item 固件就是固定在主板上的存储设备，里面有开机程序
+              \item 开机程序会将文件里的操作系统加载到内存中运行
+          \end{itemize}
+    \item 操作系统(以Linux为例)
+          \begin{itemize}
+              \item 首先加载操作系统内核
+              \item 然后启动初始化进程，编号为1，每个进程都有编号
+              \item 启动系统服务：文件，安全，联网
+              \item 等待用户登录：输入密码登录/ssh登录
+              \item 登录后，运行shell，用户就可以和操作系统对话了
+              \item bash是一种shell，图形化界面可认为是一种shell
+          \end{itemize}
+    \item 打开浏览器(chrome.exe)
+          \begin{itemize}
+              \item 你双击Chrome图标，就会运行chrome.exe文件
+              \item 开启Chrome进程，作为主进程
+              \item 主进程会开启一些辅助进程，如网络服务，GPU加速
+              \item 你每新建一个网页，就有可能会开启一个子进程
+          \end{itemize}
+    \item 浏览器的功能
+          \begin{itemize}
+              \item 发起请求，下载HTML，解析HTML，下载CSS，解析CSS
+              \item 渲染界面，下载JS，解析JS，执行JS等
+              \item 功能模块：用户界面，渲染引擎，JS引擎，存储等
+              \item 以上功能模块一般各处于不同的线程(比进程更小)
+              \item 如果进程是车间，那么线程就是车间里的流水线
+          \end{itemize}
+    \item JS引擎
+          \begin{itemize}
+              \item Chrome用的是由C++编写的V8引擎
+              \item 网景用的是SpiderMonkey，后被Firefox使用
+              \item Safari用的是JavaScriptCore
+              \item IE用的是Chakra(JScript9)
+              \item Edge用的是Chakra(JavaScript)
+              \item Node.js用的是V8引擎
+          \end{itemize}
+    \item JS引擎的功能
+          \begin{itemize}
+              \item 编译：把JS代码翻译为机器能执行的字节码或机器码
+              \item 优化：改写代码，使其更高效
+              \item 执行：执行上面的字节码或者机器码
+              \item 垃圾回收：把JS用完的内存回收，方便之后再次使用
+          \end{itemize}
+    \item 执行JS代码的准备工作
+          \begin{itemize}
+              \item 浏览器提供API：window/document/setTimeout
+              \item 没错，上面东西都不是JS自身具备的功能
+              \item 我们将这些功能称为运行环境runtime env
+              \item 一旦把JS放进页面，就开始执行JS
+              \item JS代码在内存里运行，看下部分内存图
+          \end{itemize}
+\end{enumerate}
+\subsubsection{内存图}
+\red{要求会画内存图，图片以后贴}
+这部分很重要，笔记之后补充
+\subsubsection{JS的世界是怎样的}
 \section{算法与数据结构}
 \section{JS编程接口}
 \section{项目}

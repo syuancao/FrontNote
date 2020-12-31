@@ -70,13 +70,17 @@
 \contentsline {subsection}{\numberline {6.1}概览}{16}%
 \contentsline {subsubsection}{\numberline {6.1.1}硬要求}{16}%
 \contentsline {subsubsection}{\numberline {6.1.2}JS的历史}{17}%
-\contentsline {section}{\numberline {7}算法与数据结构}{18}%
-\contentsline {section}{\numberline {8}JS编程接口}{18}%
-\contentsline {section}{\numberline {9}项目}{18}%
-\contentsline {section}{\numberline {10}MVC}{18}%
-\contentsline {section}{\numberline {11}Webpack}{18}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{18}%
-\contentsline {section}{\numberline {13}Vue}{18}%
-\contentsline {section}{\numberline {14}React}{18}%
-\contentsline {section}{\numberline {15}NodeJS}{18}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{18}%
+\contentsline {subsection}{\numberline {6.2}内存图与JS世界}{18}%
+\contentsline {subsubsection}{\numberline {6.2.1}操作系统常识}{18}%
+\contentsline {subsubsection}{\numberline {6.2.2}内存图}{19}%
+\contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{19}%
+\contentsline {section}{\numberline {7}算法与数据结构}{19}%
+\contentsline {section}{\numberline {8}JS编程接口}{19}%
+\contentsline {section}{\numberline {9}项目}{19}%
+\contentsline {section}{\numberline {10}MVC}{19}%
+\contentsline {section}{\numberline {11}Webpack}{19}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{19}%
+\contentsline {section}{\numberline {13}Vue}{19}%
+\contentsline {section}{\numberline {14}React}{19}%
+\contentsline {section}{\numberline {15}NodeJS}{19}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{19}%
