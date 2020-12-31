@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.29)  30 DEC 2020 21:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.12.29)  31 DEC 2020 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -715,14 +715,14 @@ Missing character: There is no 考 in font [lmmono10-regular]:!
 Missing character: There is no 书 in font [lmmono10-regular]:!
 Missing character: There is no 教 in font [lmmono10-regular]:!
 Missing character: There is no 程 in font [lmmono10-regular]:!
- [15] [16] (./front.aux) ) 
+ [15] [16] [17] [18] (./front.aux) ) 
 Here is how much of TeX's memory you used:
  20113 strings out of 479418
  454678 string characters out of 5888104
- 727703 words of memory out of 5000000
+ 728703 words of memory out of 5000000
  37225 multiletter control sequences out of 15000+600000
  545745 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,6n,68p,447b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on front.pdf (16 pages).
+Output written on front.pdf (18 pages).
