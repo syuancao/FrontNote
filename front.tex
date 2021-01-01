@@ -1,12 +1,17 @@
 \documentclass{article}
 \usepackage{ctex}
-\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{amsmath,amssymb,amsfonts}%equation need this 
 \usepackage{bm}
 \usepackage{listings}
 \usepackage{url}
+\usepackage{graphicx} %插入图片的宏包
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage[a4paper, left = 10mm, right = 10mm, top = 15mm, bottom = 15mm]{geometry}
+\usepackage{fontspec}
+ 
 \newcommand{\red}[1]{{\color{red}{#1}}}
 \newcommand{\green}[1]{{\color{green}{#1}}}
 \newcommand{\p}{\par }
@@ -16,8 +21,6 @@
 \title{前端基础笔记}
 \author{曹思远}
 \date{\today}
-\usepackage[a4paper, left = 10mm, right = 10mm, top = 15mm, bottom = 15mm]{geometry}
-
 \begin{document}
 \maketitle
 \tableofcontents
@@ -802,9 +805,52 @@
           \end{itemize}
 \end{enumerate}
 \subsubsection{内存图}
-\red{要求会画内存图，图片以后贴}
-这部分很重要，笔记之后补充
+\red{要求会画内存图}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/memory.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{瓜分内存图} %最终文档中希望显示的图片标题
+    \label{瓜分内存图} %用于文内引用的标签
+\end{figure}
+\begin{enumerate}
+    \item 红色区域的作用
+          \begin{itemize}
+              \item 红色专门用来存放数据，我们目前只研究该区域
+              \item 红色区域并不存变量名，变量名在\red{不知什么区}
+              \item 每种浏览器的分配规则并不一样
+              \item 还有调用栈，任务队列尚未画出
+          \end{itemize}
+    \item Stack和Heap
+          \begin{itemize}
+              \item 红色区域分为Stack栈和Heap堆
+              \item 栈和堆需要用到数据结构知识
+              \item Stack区特点：每个数据顺序存放
+              \item Heap区特点：每个数据随机存放
+          \end{itemize}
+    \item js代码在Heap和Stack区的执行过程
+          \begin{lstlisting} 
+        var a = 1
+        var b = a 
+        var person = {name: 'syuancao', hobby: 'coding'}
+        var person2 = person
+      \end{lstlisting}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/StackAndHeap.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{js代码在Heap和Stack区执行的内存图} %最终文档中希望显示的图片标题
+              \label{js内存图} %用于文内引用的标签
+          \end{figure}
+    \item 规律
+          \begin{itemize}
+              \item 数据分两种：非对象和对象
+              \item 非对象都存在Stack \red{(数字，字符串，布尔不是对象)}
+              \item 对象都存在Heap \red{(数组是对象，函数是对象)}
+              \item =号总是会把右边的东西复制到左边 \red{(不存在什么传值和传址，是直接拷贝，图中箭头指向是虚的)}
+              \item 很多书上会让你区分值和地址，只有不会画内存图的人才需要做这件事
+          \end{itemize}
+\end{enumerate}
 \subsubsection{JS的世界是怎样的}
+\subsection{Canvas实践--画图板}
 \section{算法与数据结构}
 \section{JS编程接口}
 \section{项目}
