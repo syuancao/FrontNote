@@ -73,15 +73,16 @@
 \contentsline {subsection}{\numberline {6.2}内存图与JS世界}{18}%
 \contentsline {subsubsection}{\numberline {6.2.1}操作系统常识}{18}%
 \contentsline {subsubsection}{\numberline {6.2.2}内存图}{19}%
-\contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{21}%
-\contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{21}%
-\contentsline {section}{\numberline {7}算法与数据结构}{21}%
-\contentsline {section}{\numberline {8}JS编程接口}{21}%
-\contentsline {section}{\numberline {9}项目}{21}%
-\contentsline {section}{\numberline {10}MVC}{21}%
-\contentsline {section}{\numberline {11}Webpack}{21}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{21}%
-\contentsline {section}{\numberline {13}Vue}{21}%
-\contentsline {section}{\numberline {14}React}{21}%
-\contentsline {section}{\numberline {15}NodeJS}{21}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{21}%
+\contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{20}%
+\contentsline {subsubsection}{\numberline {6.2.4}原型链}{22}%
+\contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{25}%
+\contentsline {section}{\numberline {7}算法与数据结构}{25}%
+\contentsline {section}{\numberline {8}JS编程接口}{25}%
+\contentsline {section}{\numberline {9}项目}{25}%
+\contentsline {section}{\numberline {10}MVC}{25}%
+\contentsline {section}{\numberline {11}Webpack}{25}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{25}%
+\contentsline {section}{\numberline {13}Vue}{25}%
+\contentsline {section}{\numberline {14}React}{25}%
+\contentsline {section}{\numberline {15}NodeJS}{25}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{25}%

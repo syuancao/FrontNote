@@ -848,10 +848,168 @@
               \item =号总是会把右边的东西复制到左边 \red{(不存在什么传值和传址，是直接拷贝，图中箭头指向是虚的)}
               \item 很多书上会让你区分值和地址，只有不会画内存图的人才需要做这件事
           \end{itemize}
+    \item 对象被篡改，结合内存图很好分析
+          \begin{lstlisting} 
+        var person = {name:'caosiyuan'}
+        var person2 = person
+        person2.name = 'syuancao'
+        console.log(person.name) // syuancao
+      \end{lstlisting}
 \end{enumerate}
 \subsubsection{JS的世界是怎样的}
+\red{神说要有光，就有了光，JS开发者说要有window，就有了window(浏览器提供)}
+\begin{enumerate}
+    \item JS世界还需要什么
+          \begin{itemize}
+              \item 要有console，并且挂到window上
+              \item 要有document，并且挂到window上
+              \item 要有对象，于是就有了Object，并且挂到window上
+              \item var person = \{\}等价与 var person = new Object()
+              \item 要有数组(一种特殊的对象)，于是有了Array，并且挂到window上
+              \item var a = [1, 2, 3]等价于 var a = new Array(1, 2, 3)
+              \item 要有函数(一种特殊的对象)，于是有了Function，并且挂到window上
+              \item function f()\{\}等价于 var f = new Function()
+          \end{itemize}
+    \item 题外话
+          \begin{itemize}
+              \item 为什么有 var a = []，还要提供var a = new Array()呢
+              \item 因为后者是正规写法，但是没人用，前者不正规，但是好用
+              \item 为什么有function f()\{\}，还要提供var f = new Function写法呢
+              \item 原因同上
+          \end{itemize}
+    \item 把window用内存图画出来
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/window.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{window内存图} %最终文档中希望显示的图片标题
+              \label{window内存图} %用于文内引用的标签
+          \end{figure}
+    \item 更简单的画法
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/simplewindow.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{更简单的window内存图} %最终文档中希望显示的图片标题
+              \label{更简单的window内存图} %用于文内引用的标签
+          \end{figure}
+          \begin{itemize}
+              \item 可以用console.dir(window.Array)看属性
+              \item 如果第一个字母是大写比如Object，Array，那么会就有prototype属性
+          \end{itemize}
+    \item 细节
+          \begin{itemize}
+              \item window变量和window对象是两个东西
+              \item window变量是一个容器，存放window对象的地址
+              \item window对象是Heap里的一坨数据
+              \item 不信的话，可以让var x = window，那么这个x就指向window对象，window变量就可以去死了
+              \item 但这样的代码会弄晕新手，所以不要这样写
+              \item 但是jQuery就是这样挂到window上的函数，window.jQuery=function()\{\}
+              \item 但是jQuery我们平时用\$， 用\$去调用，var \$ = jQuery，\$()
+              \item 同理，console(属性)和console对象不是同一个东西
+              \item Object和Object函数对象不是同一个东西
+              \item 前者是内存地址，后者是内存对应的一坨数据也就是一坨内存
+          \end{itemize}
+\end{enumerate}
+\subsubsection{原型链}
+\red{是JS里最重要的，也是新手最难懂的之一(注：JS有三个最难懂的，分别是this，原型，AJAX)}
+\begin{enumerate}
+    \item 内存图里的prototype是干什么用的
+          \begin{itemize}
+              \item 可以打印出来看看，console.dir(window.Object.prototype)，window可以省略
+              \item 只是看起来是一坨无用函数
+          \end{itemize}
+    \item var obj=\{\} obj.toString()为什么不报错？为什么可以运行？
+          \begin{itemize}
+              \item obj有一个隐藏属性
+              \item 隐藏属性存储了Object.prototype对象的地址
+              \item obj.toString()发现obj上没有toString
+              \item 就去隐藏属性对应的对象里面找
+              \item 于是就找到了Object.prototype.toString里面的toString
+              \item 也就是obj.toString === window.prototype.toString
+          \end{itemize}
+    \item 类似的 var arr=[] arr.join('-')为什么不报错？为什么可以运行？
+          \begin{itemize}
+              \item arr有一个隐藏属性
+              \item 隐藏属性存储了Array.prototype对象的地址
+              \item arr.join()发现arr上没有join
+              \item 就去隐藏属性对应的对象里面找
+              \item 于是就找到了Array.prototype.join里面的join
+              \item 也就是Array.prototype.join === window.prototype.join
+          \end{itemize}
+    \item JS的光
+          \begin{itemize}
+              \item 下面一张图可以解释上面的问题
+                    \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+                        \centering %图片居中
+                        \includegraphics[width=0.7\textwidth]{image/thelightOfJs.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+                        \caption{JS的光} %最终文档中希望显示的图片标题
+                        \label{js的光} %用于文内引用的标签JS
+                    \end{figure}
+          \end{itemize}
+    \item var obj2=\{\} obj2.toString() obj和obj2有什么联系
+          \begin{itemize}
+              \item 相同点:都调用.toString
+              \item 不同点：地址不同obj!==obj2, 可以拥有不同的属性
+              \item xxx.prototype存储了xxx对象的共同属性，这就是原型
+          \end{itemize}
+    \item 原型的好处
+          \begin{itemize}
+              \item 如果没有原型，声明一个对象
+                    \begin{lstlisting} 
+                    var obj = {
+                        toString: window.Object.prototype.toString,
+                        hasOwnPropertyof: window.Object......
+                    }
+                    obj.toString() 
+                    var obj2 = {
+                        toString: window.Object.prototype.toString,
+                        hasOwnPropertyof: window.Object......
+                    }
+                    obj2.toString() 
+      \end{lstlisting}
+              \item 你是不是想累死自己
+              \item 原型让你无需重复声明共有属性，省代码，省内存
+              \item 每个对象都有一个隐藏属性，他指向这个共有属性，共有属性就叫做原型
+              \item 大写的不要关心隐藏属性，这涉及js哲学问题，先把小写隐藏属性搞清楚
+          \end{itemize}
+    \item 关于隐藏属性\_proto\_
+          \begin{itemize}
+              \item 每个对象都有一个隐藏属性，他指向这个共有属性，共有属性就叫做原型
+              \item 大写的不要关心隐藏属性，这涉及js哲学问题不用关心，关系小写的隐藏属性
+              \item 如果没有隐藏属性，obj就不知道共有属性在哪，就没把法调用toString等
+          \end{itemize}
+    \item prototype和\_proto\_的区别是什么
+          \begin{itemize}
+              \item 都存着原型的地址，即相同的地址
+              \item 只不过prototype挂在函数上，通常是大写的(Array, Object, Function)上面
+              \item \_proto\_挂在每个新生成的对象上，也就是小写的(var a = \{\}, var b = [])上面
+          \end{itemize}
+    \item 犀利的提问
+          \begin{itemize}
+              \item 类似之前提过篡改对象的例子
+                    \begin{lstlisting} 
+                        var obj = {}
+                        var obj2 = {}
+                        obj.toString === obj2.toString //输出为true
+                        obj.toString = 'fuck' // 输出为"fuck"
+                        obj.toString //也等于 'fuck'吗？
+              \end{lstlisting}
+              \item 不废话一图解决问题
+                    \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+                        \centering %图片居中
+                        \includegraphics[width=0.7\textwidth]{image/objtoString.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+                        \caption{toString篡改} %最终文档中希望显示的图片标题
+                        \label{toString篡改} %用于文内引用的标签
+                    \end{figure}
+              \item 原因解释
+                    \begin{itemize}
+                        \item 这个和之前的不一样，这里toString是隐藏属性
+                        \item 结合上图相当于写了两层
+                        \item 所以一层是可以篡改的，两层就不可以
+                    \end{itemize}
+          \end{itemize}
+\end{enumerate}
 \subsection{Canvas实践--画图板}
-\section{算法与数据结构}
+\section{算法与数据结构}AJAX
 \section{JS编程接口}
 \section{项目}
 \section{MVC}
