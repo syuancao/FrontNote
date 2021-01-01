@@ -1137,6 +1137,67 @@
             \end{lstlisting}
           \end{itemize}
 \end{enumerate}
+\subsubsection{JS数据}
+\begin{enumerate}
+    \item 7种数据类型(大小写无所谓)
+          \begin{itemize}
+              \item 数字number
+              \item 字符串string
+              \item 布尔bool
+              \item 符号symbol
+              \item 空undefined
+              \item 空null
+              \item 对象object
+              \item 总结：四基两空一对象
+          \end{itemize}
+    \item 以下不是数据类型
+          \begin{itemize}
+              \item 数组，函数，日期
+              \item 它们都属于object
+          \end{itemize}
+    \item 5个falsy值
+          \begin{itemize}
+              \item falsy就是相当于false但又不是false值
+              \item 分别是undefined null 0 NaN ''
+              \item '' '  ' 即空字符串和空格字符串不是一个玩意
+          \end{itemize}
+    \item undefined和null的区别
+          \begin{itemize}
+              \item 这是js的垃圾之处，没有本质区别
+              \item 如果一个变量声明了，但没有赋值，那么默认值就是undefined而不是null
+              \item 如果一个函数，没有写return，那么默认return undefined, 而不是null
+              \item 前端程序员习惯上，把非对象的空值写成undefined，把对象空值写为null
+              \item 仅仅是习惯而已
+          \end{itemize}
+    \item let声明
+          \begin{itemize}
+              \item 遵循块作用域，即使用范围不能超出{}
+              \item 不能重复申明
+              \item 可以赋值，也可以不赋值
+              \item 必须先声明再使用，否则报错
+              \item 全局声明的let变量，不会变成window的属性
+              \item for循环配合let有奇效
+          \end{itemize}
+    \item 类型转换
+          \begin{itemize}
+              \item number => string
+                    \begin{itemize}
+                        \item String(n)
+                        \item n + ''
+                    \end{itemize}
+              \item string => number
+                    \begin{itemize}
+                        \item Number(s)
+                        \item parseInt(s)/parseFloat(s)
+                        \item s - 0
+                    \end{itemize}
+              \item x => bool
+                    \begin{itemize}
+                        \item Boolean(x)
+                        \item x.toString()
+                    \end{itemize}
+          \end{itemize}
+\end{enumerate}
 \section{算法与数据结构}
 \section{JS编程接口}
 \section{项目}

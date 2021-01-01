@@ -80,13 +80,14 @@
 \contentsline {subsection}{\numberline {6.5}JS语法}{25}{subsection.6.5}%
 \contentsline {subsubsection}{\numberline {6.5.1}JS版本}{25}{subsubsection.6.5.1}%
 \contentsline {subsubsection}{\numberline {6.5.2}语法}{25}{subsubsection.6.5.2}%
-\contentsline {section}{\numberline {7}算法与数据结构}{27}{section.7}%
-\contentsline {section}{\numberline {8}JS编程接口}{27}{section.8}%
-\contentsline {section}{\numberline {9}项目}{27}{section.9}%
-\contentsline {section}{\numberline {10}MVC}{27}{section.10}%
-\contentsline {section}{\numberline {11}Webpack}{27}{section.11}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{27}{section.12}%
-\contentsline {section}{\numberline {13}Vue}{27}{section.13}%
-\contentsline {section}{\numberline {14}React}{27}{section.14}%
-\contentsline {section}{\numberline {15}NodeJS}{27}{section.15}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{27}{section.16}%
+\contentsline {subsubsection}{\numberline {6.5.3}JS数据}{27}{subsubsection.6.5.3}%
+\contentsline {section}{\numberline {7}算法与数据结构}{29}{section.7}%
+\contentsline {section}{\numberline {8}JS编程接口}{29}{section.8}%
+\contentsline {section}{\numberline {9}项目}{29}{section.9}%
+\contentsline {section}{\numberline {10}MVC}{29}{section.10}%
+\contentsline {section}{\numberline {11}Webpack}{29}{section.11}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{29}{section.12}%
+\contentsline {section}{\numberline {13}Vue}{29}{section.13}%
+\contentsline {section}{\numberline {14}React}{29}{section.14}%
+\contentsline {section}{\numberline {15}NodeJS}{29}{section.15}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{29}{section.16}%
