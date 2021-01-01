@@ -1010,7 +1010,134 @@
 \red{\href{https://github.com/syuancao/FrontNotePractice/tree/master/JS/0-Canvas}{项目地址} }
 \pl
 \red{\href{https://syuancao.github.io/FrontNotePractice/JS/0-Canvas/index.html}{预览效果} }
-\section{算法与数据结构}AJAX
+\subsection{Canvas实践--画图板}
+\subsection{JS语法}
+\red{es6是最低要求}
+\subsubsection{JS版本}
+\begin{enumerate}
+    \item 历史版本
+          \begin{itemize}
+              \item ES3，IE6支持，总体评价：垃圾
+              \item ES5，总体评价：还是垃圾
+              \item ES6，大部分浏览器支持，总体评级：一半垃圾一半好
+              \item ES2019与ES6差别不大
+          \end{itemize}
+    \item 为什么说ES6一半垃圾
+          \begin{itemize}
+              \item 因为ES不能删除以前的特性，需要兼容旧网站
+              \item 也就是说以前能运行的网站，以后都要能运行
+              \item 对比Python3你就能知道兼容的好处：稳定
+          \end{itemize}
+    \item 一门语言的价值
+          \begin{itemize}
+              \item 是由其产生的价值决定
+              \item JS是世界上使用最广的语言
+              \item JS是门槛极低的语言(只要你不学糟粕)
+              \item JS是一门能产生价值的语言(虽然不美)
+              \item 它的优秀之处并非原创，它的原创之处并不优秀
+          \end{itemize}
+\end{enumerate}
+\subsubsection{语法}
+\begin{enumerate}
+    \item 表达式
+          \begin{itemize}
+              \item 1+2表达式的值为3
+              \item add(1,2)表达式的值为函数的返回值
+              \item console.log表达式的值为函数本身
+              \item console.log(3)表达式的值为多少？(undefined)
+          \end{itemize}
+    \item 语句
+          \begin{itemize}
+              \item var a = 1是一个和语句
+          \end{itemize}
+    \item 二者的区别
+          \begin{itemize}
+              \item 表达式一般都有值，语句可能有也可能没有
+              \item 语句一般会改变环境(声明，赋值)
+              \item 上面两句话并不是绝对的
+          \end{itemize}
+    \item 大小写敏感
+          \begin{itemize}
+              \item var a和var A是不同的
+              \item object和Object是不同的
+              \item function和Function是不同的
+              \item 具体含义后面说
+          \end{itemize}
+    \item 空格
+          \begin{itemize}
+              \item 大部分空格没有实际意义
+              \item var a = 1和var a=1没有区别
+              \item 加回车大部分时候也不影响
+              \item 只有一个地方不能加回车，那就是return后面
+          \end{itemize}
+    \item 标识符的规则
+          \begin{itemize}
+              \item 第一个字符，可以是Unicode字母或\$或\-或中字
+              \item 后面的字符，除了上所说，还可以有数字
+              \item 变量名是标识符
+          \end{itemize}
+    \item 区块block
+          \begin{itemize}
+              \item 把代码包在一起
+              \item 常常与if/for/while合用
+          \end{itemize}
+    \item if语句
+          \begin{itemize}
+              \item if(表达式){语句1}else{语句2}
+              \item \{\}在语句只有一句的时候可以省略，但不建议这么做
+          \end{itemize}
+    \item if语句变态情况
+          \begin{itemize}
+              \item 表达式里可以非常变态，如 a = 1
+              \item 语句1里可以非常变态，如嵌套if else
+              \item 语句2里可以非常变态，如嵌套if else
+              \item 缩进也可以很变态，如面试常常下套
+                    \begin{lstlisting} 
+                        a = 1
+                        if (a === 2) 
+                            console.log('a')
+                            console.log('a等于2')
+                    \end{lstlisting}
+          \end{itemize}
+    \item while循环
+          \begin{itemize}
+              \item while(表达式){语句}
+              \item 当表达式为真，执行语句，执行完再判断表达式真假
+              \item 当表达式为假，执行后面的语句
+              \item do ... while可以做用户输入判定
+          \end{itemize}
+    \item for循环
+          \begin{itemize}
+              \item for循环是while的方便写法
+              \item for(语句1;表达式2;语句3) {循环体}
+              \item 不多说了，和C语言一样
+          \end{itemize}
+    \item label语句
+          \begin{itemize}
+              \item 语法
+                    \begin{lstlisting} 
+                foo: {
+                    console.log(1);
+                    break foo;
+                    console.log('本行不会输出);
+                }
+                console.log(2);
+
+                foo: 1; 
+
+                {
+                    foo: 1;
+                }
+            \end{lstlisting}
+              \item 面试:下面的东西是什么？下面是代码块，是label，不是对象
+                    \begin{lstlisting} 
+                        {
+                            foo: 1
+                        }
+            \end{lstlisting}
+          \end{itemize}
+\end{enumerate}
+\section{算法与数据结构}
 \section{JS编程接口}
 \section{项目}
 \section{MVC}

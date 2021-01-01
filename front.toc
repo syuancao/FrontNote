@@ -76,13 +76,17 @@
 \contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{20}{subsubsection.6.2.3}%
 \contentsline {subsubsection}{\numberline {6.2.4}原型链}{22}{subsubsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{24}{subsection.6.3}%
-\contentsline {section}{\numberline {7}算法与数据结构}{25}{section.7}%
-\contentsline {section}{\numberline {8}JS编程接口}{25}{section.8}%
-\contentsline {section}{\numberline {9}项目}{25}{section.9}%
-\contentsline {section}{\numberline {10}MVC}{25}{section.10}%
-\contentsline {section}{\numberline {11}Webpack}{25}{section.11}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{25}{section.12}%
-\contentsline {section}{\numberline {13}Vue}{25}{section.13}%
-\contentsline {section}{\numberline {14}React}{25}{section.14}%
-\contentsline {section}{\numberline {15}NodeJS}{25}{section.15}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{25}{section.16}%
+\contentsline {subsection}{\numberline {6.4}Canvas实践--画图板}{25}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}JS语法}{25}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}JS版本}{25}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}语法}{25}{subsubsection.6.5.2}%
+\contentsline {section}{\numberline {7}算法与数据结构}{27}{section.7}%
+\contentsline {section}{\numberline {8}JS编程接口}{27}{section.8}%
+\contentsline {section}{\numberline {9}项目}{27}{section.9}%
+\contentsline {section}{\numberline {10}MVC}{27}{section.10}%
+\contentsline {section}{\numberline {11}Webpack}{27}{section.11}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{27}{section.12}%
+\contentsline {section}{\numberline {13}Vue}{27}{section.13}%
+\contentsline {section}{\numberline {14}React}{27}{section.14}%
+\contentsline {section}{\numberline {15}NodeJS}{27}{section.15}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{27}{section.16}%
