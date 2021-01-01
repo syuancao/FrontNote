@@ -76,18 +76,18 @@
 \contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{20}{subsubsection.6.2.3}%
 \contentsline {subsubsection}{\numberline {6.2.4}原型链}{22}{subsubsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{24}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Canvas实践--画图板}{25}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}JS语法}{25}{subsection.6.5}%
-\contentsline {subsubsection}{\numberline {6.5.1}JS版本}{25}{subsubsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.2}语法}{25}{subsubsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.3}JS数据}{27}{subsubsection.6.5.3}%
-\contentsline {section}{\numberline {7}算法与数据结构}{29}{section.7}%
-\contentsline {section}{\numberline {8}JS编程接口}{29}{section.8}%
-\contentsline {section}{\numberline {9}项目}{29}{section.9}%
-\contentsline {section}{\numberline {10}MVC}{29}{section.10}%
-\contentsline {section}{\numberline {11}Webpack}{29}{section.11}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{29}{section.12}%
-\contentsline {section}{\numberline {13}Vue}{29}{section.13}%
-\contentsline {section}{\numberline {14}React}{29}{section.14}%
-\contentsline {section}{\numberline {15}NodeJS}{29}{section.15}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{29}{section.16}%
+\contentsline {subsection}{\numberline {6.4}JS语法}{25}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}JS版本}{25}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}语法}{25}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}JS数据}{27}{subsubsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.4}JS对象}{28}{subsubsection.6.4.4}%
+\contentsline {section}{\numberline {7}算法与数据结构}{31}{section.7}%
+\contentsline {section}{\numberline {8}JS编程接口}{31}{section.8}%
+\contentsline {section}{\numberline {9}项目}{31}{section.9}%
+\contentsline {section}{\numberline {10}MVC}{31}{section.10}%
+\contentsline {section}{\numberline {11}Webpack}{31}{section.11}%
+\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{31}{section.12}%
+\contentsline {section}{\numberline {13}Vue}{31}{section.13}%
+\contentsline {section}{\numberline {14}React}{31}{section.14}%
+\contentsline {section}{\numberline {15}NodeJS}{31}{section.15}%
+\contentsline {section}{\numberline {16}Vue3造轮子}{31}{section.16}%
