@@ -6,11 +6,11 @@
 \usepackage{bm}
 \usepackage{listings}
 \usepackage{url}
+\usepackage{hyperref}
 \usepackage{graphicx} %插入图片的宏包
 \usepackage{float} %设置图片浮动位置的宏包
 \usepackage{subfigure} %插入多图时用子图显示的宏包
 \usepackage[a4paper, left = 10mm, right = 10mm, top = 15mm, bottom = 15mm]{geometry}
-\usepackage{fontspec}
  
 \newcommand{\red}[1]{{\color{red}{#1}}}
 \newcommand{\green}[1]{{\color{green}{#1}}}
@@ -968,13 +968,11 @@
       \end{lstlisting}
               \item 你是不是想累死自己
               \item 原型让你无需重复声明共有属性，省代码，省内存
-              \item 每个对象都有一个隐藏属性，他指向这个共有属性，共有属性就叫做原型
-              \item 大写的不要关心隐藏属性，这涉及js哲学问题，先把小写隐藏属性搞清楚
           \end{itemize}
     \item 关于隐藏属性\_proto\_
           \begin{itemize}
-              \item 每个对象都有一个隐藏属性，他指向这个共有属性，共有属性就叫做原型
-              \item 大写的不要关心隐藏属性，这涉及js哲学问题不用关心，关系小写的隐藏属性
+              \item 每个对象都有一个隐藏属性，用来保存其原型的地址，这个隐藏属性的名字叫做\_proto\_
+              \item 大写的不要关心隐藏属性，这涉及js哲学问题不用关心，关心小写的隐藏属性
               \item 如果没有隐藏属性，obj就不知道共有属性在哪，就没把法调用toString等
           \end{itemize}
     \item prototype和\_proto\_的区别是什么
@@ -1009,6 +1007,9 @@
           \end{itemize}
 \end{enumerate}
 \subsection{Canvas实践--画图板}
+\red{\href{https://github.com/syuancao/FrontNotePractice/tree/master/JS/0-Canvas}{项目地址} }
+\pl
+\red{\href{https://syuancao.github.io/FrontNotePractice/JS/0-Canvas/index.html}{预览效果} }
 \section{算法与数据结构}AJAX
 \section{JS编程接口}
 \section{项目}
