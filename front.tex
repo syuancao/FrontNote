@@ -17,10 +17,14 @@
 \newcommand{\green}[1]{{\color{green}{#1}}}
 \newcommand{\yellow}[1]{{\color{yellow}{#1}}}
 \newcommand{\orange}[1]{{\color{orange}{#1}}}
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+\newcommand{\pink}[1]{{\color{pink}{#1}}}
+\newcommand{\tiffany}[1]{{\color{tiffany}{#1}}}
 \newcommand{\p}{\par }
 \newcommand{\pl}{\par \ \par}
 \newcommand{\s}[1]{${#1}$}
 
+\definecolor{tiffany}{RGB}{127, 208, 201}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
@@ -1722,6 +1726,225 @@
           \end{itemize}
 \end{enumerate}
 \section{前端站点导航}
+\begin{enumerate}
+    \item 设计需要用到的网站
+          \begin{itemize}
+              \item \tiffany{https://www.figma.com/}
+              \item \tiffany{https://www.iconfont.cn/}
+          \end{itemize}
+    \item 一些细节
+          \begin{itemize}
+              \item 引入jQuery用https://www.bootcdn.cn/
+              \item background-color会自动填满整个页面
+          \end{itemize}
+\end{enumerate}
+\section{前后分离}
+\subsection{AJAX的原理}
+\subsection{异步与Promise}
+\subsection{跨域，CORS，JSONP}
+\red{面试必必必问，菜逼必定不回答}
+\begin{enumerate}
+    \item 跨域关键知识
+          \begin{itemize}
+              \item \orange{同源策略}
+              \item 浏览器故意设计的一个功能限制
+              \item \orange{CORS}
+              \item 突破浏览器限制的一个方法
+              \item \orange{JSONP}
+              \item IE时代的妥协
+          \end{itemize}
+    \item 同源的定义
+          \begin{itemize}
+              \item \orange{源}
+              \item window.origin或location.origin可以得到当前源
+              \item 源 = 协议 + 域名 + 端口号
+              \item \orange{如果两个url的}
+              \item 协议
+              \item 域名
+              \item 端口号
+              \item 完全一致，那么这两个url就是同源
+              \item \orange{举例}
+              \item \url{https://qq.com}，\url{https://www.baidu.com} 不同源
+              \item \url{https://baidu.com}，\url{https://www.baidu.com} 不同源
+              \item 完全一致才算同源
+          \end{itemize}
+    \item 同源策略的定义
+          \begin{itemize}
+              \item \orange{浏览器规定}
+              \item 如果JS\blue{运行在}源A里，那么就只能获取源A的数据
+              \item 不能获取源B的数据，即\blue{不允许跨域}
+              \item \orange{举例(省略http协议)}
+              \item 假设syuancao.com/index.html引用了cdn.com/1.js
+              \item 所以1.js就只能获取syuancao.com的数据
+              \item 不能获取1.syuancao.com或者qq.com的数据
+              \item \orange{这是浏览器的功能！}
+              \item 浏览器故意要这样设计的
+              \item \blue{同源策略就是不同源的页面之间，不准互相访问数据}
+          \end{itemize}
+    \item 浏览器这样做的目的是啥？
+          \begin{itemize}
+              \item 为了保护用户隐私！怎么保护的？
+          \end{itemize}
+    \item 如果没有同源策略
+          \begin{itemize}
+              \item \orange{以QQ空间为例}
+              \item 源为\url{https://user.qzone.qq.com}
+              \item 假设，当前用户已经登录 (用Cookie，后面讲)
+              \item 假设，AJAX请求/friends.json可获取用户好友列表
+              \item 到目前为止都很正常
+              \item \orange{黑客来了}
+              \item 假设你的女神分享了\url{https://qzone-qq.com}给你
+              \item 实际上这个是一个钓鱼网站
+              \item 你点开这个网页，这样网页也请求你的好友列表
+              \item \url{https://user.qzone.qq.com/friends.json}
+              \item 请问，你的好友列表是不是就把黑客偷偷偷走了？
+              \item 好像是哦......
+          \end{itemize}
+    \item 问题的根源
+          \begin{itemize}
+              \item \orange{无法区分发送者}
+              \item QQ空间页面里的JS和黑客网页里的JS
+              \item 发的请求几乎没有区别(referrer有区别)
+              \item 所以，没有同源策略，任何页面都能偷QQ空间的数据
+              \item 甚至支付宝余额！
+              \item \orange{那检查referer不就号了？}
+              \item 安全原则：安全链条的强度取决于最弱的一环
+              \item 万一这个网站的后端开发工程师是个傻X呢
+              \item 所以浏览器应该主动预防这个偷数据的行为
+              \item 总之，浏览器为了用户隐私，设置了严格的同源策略
+          \end{itemize}
+    \item 代码演示步骤
+          \begin{itemize}
+              \item \orange{创建目录}
+              \item qq-com里面有一个server.js，用来模拟QQ空间
+              \item syuancao-com里面有一个server.js，用来模拟坏人网站
+              \item \orange{qq-com}
+              \item /index.html是首页
+              \item /qq.js是JS脚本文件
+              \item /friends.json是模拟的好友数据
+              \item 端口监听为8888，访问\url{http://127.0.0.1:8888}
+              \item \orange{syuancao-com}
+              \item /index.html是首页
+              \item /syuancao.js是JS脚本文件
+              \item 端口监听为9999，访问\url{http://127.0.0.1:9999}
+          \end{itemize}
+    \item hosts
+          \begin{itemize}
+              \item \orange{设置本地域名映射}
+              \item 让qq.com映射到127.0.0.1
+              \item 就可以访问\url{http://qq.com:8888/index.html}
+              \item 让syuancao.com映射到127.0.0.1
+              \item 就可以访问\url{http://syuancao.com:9999/index.html}
+              \item \orange{设置hosts}
+              \item 让两个\url{http://127.0.0.1}变成不同的
+          \end{itemize}
+    \item 跨域AJAX
+          \begin{itemize}
+              \item \orange{正常使用AJAX}
+              \item 在qq.com:8888里运行的JS可以访问/friends.json
+              \item \orange{黑客偷数据}
+              \item 在syuancao.com:9999里运行的JS不能访问！
+              \item 浏览器需要\blue{CORS}
+              \item \orange{提问}
+              \item 黑客的请求成功了没有？
+              \item 答: 成功了，因为qq.com后台有log
+              \item 黑客拿到了响应没有？
+              \item 答：没有，因为浏览器不给数据给它
+              \item 就没有浏览器不限制跨域么？
+              \item 答：如果不限制，就是浏览器bug了，快向浏览器反馈
+          \end{itemize}
+    \item 其他新手疑问
+          \begin{itemize}
+              \item \orange{为什么a.qq.com访问qq.com也算跨域？}
+              \item 答：因为历史上出现过不同公司的共用域名，这两个不一定是同一网站
+              \item 浏览器为了谨慎起见，认为这是不同的源
+              \item \orange{为什么不同端口也算跨域？}
+              \item 答：原因同上，一个端口一个公司。记住安全链条的强度取决于最弱的一环
+              \item 任何给安全相关的问题都要谨慎对待
+              \item \orange{为什么两个网站的IP是一样的，也算跨域？}
+              \item 答: 原因同上，IP可以公用。
+              \item \orange{为什么可以跨域使用CSS，JS和图片等？}
+              \item 答：同源策略限制的是数据访问，我们引用CSS,JS和图片的时候，其实并不知道
+              \item 其内容，我们只是在引用。不信我问你，你能知道CSS的第一个字符是什么吗？
+              \item \orange{现实却是：请问怎么跨域？}
+              \item 面试官会问你，工作中也会遇到
+          \end{itemize}
+    \item 解法一: CORS
+          \begin{itemize}
+              \item \orange{问题根源}
+              \item 浏览器默认不同源之间不能互相访问数据
+              \item 但是qq.com和syuancao.com其实都是方方的网站
+              \item 方方就是想要两个网站互相访问，浏览器为什么阻止
+              \item \orange{好吧，用CORS}
+              \item 浏览器说，如果要共享数据，需要提前声明！
+              \item 哦，那怎么声明呢？
+              \item 浏览器说，qq.com在响应头里写syuancao.com可以访问
+              \item 哦，具体语法呢？
+              \item Access-Control-Allow-Origin:http://foo.example
+              \item 浏览器说：都在MDN文档里
+              \item 注意：CORS分为假单请求和复杂请求，具体看文档
+          \end{itemize}
+    \item 解法二: JSONP (可兼容IE)
+          \begin{itemize}
+              \item \orange{定义}
+              \item JSONP和JSON半毛线关系都没有
+              \item 由于前端水平低下，错误地将其称为JSONP
+              \item 具体看代码
+              \item \orange{我们现在面临地问题是什么？}
+              \item 程序员常常面临奇葩需求
+              \item 没有CORS，怎么跨域
+              \item 记不记得我们可以随意引用JS
+              \item 虽然我们不能访问qq.com:8888/friends.json
+              \item 但是我们能用qq.com:8888/friends.js啊！
+              \item 这有哦什么用？JS又不是数据
+              \item 我们让JS包含数据不就好了。。。
+              \item 试试看吧！明天就要上线啦！
+          \end{itemize}
+    \item JSONP步骤
+          \begin{itemize}
+              \item \orange{syuancao.com访问qq.com}
+              \item qq.com将数据写到/friends.js
+              \item syuancao.com用script标签引用/friends.js
+              \item /friend.js执行，执行什么呢？
+              \item syuancao事先定义号window.xxx函数
+              \item /friend.js执行window.xxx({friends:[...]})
+              \item 然后syuancao.com就是通过window.xxx获取到数据了
+              \item window.xxx就是一个回调啊！
+              \item 这TM都能想到，人才啊！
+              \item 这是很多前端工程师一起想出来的
+          \end{itemize}
+    \item 优化
+          \begin{itemize}
+              \item \orange{xxx能不写死吗？}
+              \item window.xxx能不能改其他名字？
+              \item 其实名字不重要，只要syuancao.com定义的函数名
+              \item 和qq.com/friends.js执行的函数名是同一个即可！
+              \item 那就把名字传给/friends.js
+              \item 具体看代码
+          \end{itemize}
+    \item 再优化
+          \begin{itemize}
+              \item \orange{封装！}
+              \item 初级程序员学API，中级程序员学封装
+              \item 封装成jsonp('url').then(f1, f2)
+          \end{itemize}
+    \item JSONP是什么？(面试回答，需要回答优缺点)
+          \begin{itemize}
+              \item JSONP就是我们在跨域的时候由于当前浏览器不支持CORS
+              \item 或者因为某些条件不支持CORS，我们必须使用另外一种方式
+              \item 来跨域，于是我们就请求一个JS文件，这个JS文件会执行一个回调，
+              \item 回调里面就有我们的数据。回调的名字是可以随机生成的，给个随机数
+              \item 然后我们把这个名字以callback的名字传给后台，
+              \item 后台会把这个函数返回给我们并执行。
+              \item JSONP优点是兼容IE，也可以成功跨域。
+              \item JSONP缺点是因为它是script标签，读不到AJAX那么精确的状态，不知道
+              \item 状态码和成功的头是什么，只知道响应和失败。
+              \item 由于它是script标签，所以它只能发get请求，即JSONP不支持post
+          \end{itemize}
+    \item \href{https://github.com/syuancao/FrontNotePractice/tree/master/CROSS-ORIGIN}{\yellow{\underline{代码示例}}}
+\end{enumerate}
+\subsection{静态服务器}
+\subsection{Ajax实战：Cookie，Session}
 \section{MVC}
 \section{Webpack}
 \section{虚拟DOM与DOM diff}

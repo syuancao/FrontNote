@@ -95,10 +95,16 @@
 \contentsline {subsection}{\numberline {8.3}jQuery中的设计模式}{33}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}DOM事件与事件委托}{33}{subsection.8.4}%
 \contentsline {section}{\numberline {9}前端站点导航}{39}{section.9}%
-\contentsline {section}{\numberline {10}MVC}{39}{section.10}%
-\contentsline {section}{\numberline {11}Webpack}{39}{section.11}%
-\contentsline {section}{\numberline {12}虚拟DOM与DOM diff}{39}{section.12}%
-\contentsline {section}{\numberline {13}Vue}{39}{section.13}%
-\contentsline {section}{\numberline {14}React}{39}{section.14}%
-\contentsline {section}{\numberline {15}NodeJS}{39}{section.15}%
-\contentsline {section}{\numberline {16}Vue3造轮子}{39}{section.16}%
+\contentsline {section}{\numberline {10}前后分离}{39}{section.10}%
+\contentsline {subsection}{\numberline {10.1}AJAX的原理}{39}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}异步与Promise}{39}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}跨域，CORS，JSONP}{39}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}静态服务器}{44}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Ajax实战：Cookie，Session}{44}{subsection.10.5}%
+\contentsline {section}{\numberline {11}MVC}{44}{section.11}%
+\contentsline {section}{\numberline {12}Webpack}{44}{section.12}%
+\contentsline {section}{\numberline {13}虚拟DOM与DOM diff}{44}{section.13}%
+\contentsline {section}{\numberline {14}Vue}{44}{section.14}%
+\contentsline {section}{\numberline {15}React}{44}{section.15}%
+\contentsline {section}{\numberline {16}NodeJS}{44}{section.16}%
+\contentsline {section}{\numberline {17}Vue3造轮子}{44}{section.17}%
