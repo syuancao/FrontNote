@@ -70,124 +70,124 @@
 \begin{abstract}
     前端基础笔记
 \end{abstract}
-
-\section{软件安装}
-\begin{lstlisting}[caption=My Javascript Example]
-    Name.prototype = {
-      methodName: function(params){
-        var doubleQuoteString = "some text";
-        var singleQuoteString = 'some more text';
-        // this is a comment
-        if(this.confirmed != null && typeof(this.confirmed) == Boolean && this.confirmed == true){
-          document.createElement('h3');
-          $('#system').append("This looks great");
-          return false;
-        } else {
-          throw new Error;
-        }
-      }
-    }
-    \end{lstlisting}
-\subsection{必备软件列表}
-\begin{enumerate}
-    \item vscode
-    \item cmder
-    \item chrome
-    \item clash
-    \item NodeJS, Yarn
-\end{enumerate}
-\subsubsection{必备软件配置}
+\section{软件安装与配置}
 \red{任何软件都需要配置}
-\paragraph{vscode}
-\begin{enumerate}
-    \item 必备插件
-          \begin{itemize}
-              \item Chinese (Simplified) Language Pack for Visual Studio Code
-              \item Code Spell Checker
-              \item Git Easy
-              \item Latex Workshop
-              \item Markdown All in One
-              \item Prettier - Code formatter
-          \end{itemize}
-    \item 环境和快捷键配置
-          \begin{itemize}
-              \item 具体看我知乎保存的setting.json 和 keybinding.json
-          \end{itemize}
-    \item 快捷键
-          \begin{itemize}
-              \item ctrl + p - 找文件
-              \item ctrl + shift + p 或 F1 - 输命令
-              \item alt + 单击 - 多位置输入
-          \end{itemize}
-\end{enumerate}
-\paragraph{cmder}
-\begin{enumerate}
-    \item 配置内容较多，直接看我保存的配置文件。
-    \item 将cmder加入右键菜单，加入环境变量。
-\end{enumerate}
-\paragraph{chrome}
-\begin{enumerate}
-    \item 可选插件
-          \begin{itemize}
-              \item Proxy SwitchOmega
-              \item uBlock
-          \end{itemize}
-    \item 高级用户配置
-          \begin{itemize}
-              \item 在开发者工具\red{里面}按ESC可以新建控制台
-              \item Sources面板可以保存代码片段(Snippets)
-              \item Network关掉show overview，filter可以搜素，右击勾选Method
-              \item Network可模拟慢网速/断网
-              \item Preserve log不会清空当前请求数据
-              \item Disable cache清除缓存
-          \end{itemize}
-    \item chrome常用快捷键
-          \begin{itemize}
-              \item 鼠标中键单击 - 打开或关闭
-              \item ctrl + T - 新开标签
-              \item ctrl + shift + T - 撤销关闭
-              \item ctrl + 点击 - 在新标签打开
-              \item ctrl + W - 关闭当前标签
-              \item ctrl + Reload 或者 F5 - 刷新
-              \item ctrl + Location - 输入网址
-              \item ctrl + shift + Inspector 或 F12 - 打开开发者工具
-              \item alt + 左右 - 前进后退
-              \item alt + 回车 - 在新标签打开
-              \item shift + 回车 - 在新窗口打开
-              \item ctrl + shift + delete - 删除历史浏览数据
-          \end{itemize}
-\end{enumerate}
-\paragraph{windows}
-\begin{enumerate}
-    \item 关掉任务栏无用标签，卸载无用软件。(如搜索框，任务视图，微软小娜Cortana，开始菜单里的各种贴图)
-    \item 可安装TranslucentTB使任务栏透明
-    \item 理解用户目录，即 C:\verb|\|Users\verb|\|Jony，分别右击用户目录里的下载和文件，属性-->位置-->移动到E盘。
-    \item 显示文件后缀，打开查看-->选项-->查看，去掉隐藏已知文件扩展名，勾选显示已知文件，文件夹和驱动器。
-    \item 记住组合键\begin{itemize}
-              \item Win组合键
-                    \begin{enumerate}
-                        \item win + Desktop - 展示桌面
-                        \item win + 方向键 - 移动窗口
-                        \item alt + tab - 切换窗口
-                        \item win + tab - 不怎么常用的切换窗口
-                        \item win + ctrl + 方向键 - 切换桌面
-                    \end{enumerate}
-              \item Ctrl组合键
-                    \begin{enumerate}
-                        \item ctrl + All/ctrl + Copy/ctrl + V/ctrl + Z/ctrl + Y
-                        \item ctrl + Reload/F5
-                        \item ctrl + P - 打印
-                    \end{enumerate}
-          \end{itemize}
-\end{enumerate}
-\paragraph{NodeJS, Yarn}
-\begin{enumerate}
-    \item 开发必装的东西
-          \begin{itemize}
-              \item nrm
-              \item tldr
-          \end{itemize}
-\end{enumerate}
+% \begin{lstlisting}[caption=My Javascript Example]
+%     Name.prototype = {
+%       methodName: function(params){
+%         var doubleQuoteString = "some text";
+%         var singleQuoteString = 'some more text';
+%         // this is a comment
+%         if(this.confirmed != null && typeof(this.confirmed) == Boolean && this.confirmed == true){
+%           document.createElement('h3');
+%           $('#system').append("This looks great");
+%           return false;
+%         } else {
+%           throw new Error;
+%         }
+%       }
+%     }
+%     \end{lstlisting}
+% \subsection{必备软件列表}
+% \begin{enumerate}
+%     \item vscode, webstorm
+%     \item cmder, 7-zip, everything
+%     \item chrome, PS, texlive
+%     \item clash, sumatraPDF, Snipaste
+%     \item NodeJS, Yarn, python
+% \end{enumerate}
+% \subsubsection{必备软件配置}
+% \red{任何软件都需要配置}
+% \paragraph{vscode}
+% \begin{enumerate}
+%     \item 必备插件
+%           \begin{itemize}
+%               \item Chinese (Simplified) Language Pack for Visual Studio Code
+%               \item Code Spell Checker
+%               \item Git Easy
+%               \item Latex Workshop
+%               \item Markdown All in One
+%               \item Prettier - Code formatter
+%           \end{itemize}
+%     \item 环境和快捷键配置
+%           \begin{itemize}
+%               \item 具体看我知乎保存的setting.json 和 keybinding.json
+%           \end{itemize}
+%     \item 快捷键
+%           \begin{itemize}
+%               \item ctrl + p - 找文件
+%               \item ctrl + shift + p 或 F1 - 输命令
+%               \item alt + 单击 - 多位置输入
+%           \end{itemize}
+% \end{enumerate}
+% \paragraph{cmder}
+% \begin{enumerate}
+%     \item 配置内容较多，直接看我保存的配置文件。
+%     \item 将cmder加入右键菜单，加入环境变量。
+% \end{enumerate}
+% \paragraph{chrome}
+% \begin{enumerate}
+%     \item 可选插件
+%           \begin{itemize}
+%               \item Proxy SwitchOmega
+%               \item uBlock
+%           \end{itemize}
+%     \item 高级用户配置
+%           \begin{itemize}
+%               \item 在开发者工具\red{里面}按ESC可以新建控制台
+%               \item Sources面板可以保存代码片段(Snippets)
+%               \item Network关掉show overview，filter可以搜素，右击勾选Method
+%               \item Network可模拟慢网速/断网
+%               \item Preserve log不会清空当前请求数据
+%               \item Disable cache清除缓存
+%           \end{itemize}
+%     \item chrome常用快捷键
+%           \begin{itemize}
+%               \item 鼠标中键单击 - 打开或关闭
+%               \item ctrl + T - 新开标签
+%               \item ctrl + shift + T - 撤销关闭
+%               \item ctrl + 点击 - 在新标签打开
+%               \item ctrl + W - 关闭当前标签
+%               \item ctrl + Reload 或者 F5 - 刷新
+%               \item ctrl + Location - 输入网址
+%               \item ctrl + shift + Inspector 或 F12 - 打开开发者工具
+%               \item alt + 左右 - 前进后退
+%               \item alt + 回车 - 在新标签打开
+%               \item shift + 回车 - 在新窗口打开
+%               \item ctrl + shift + delete - 删除历史浏览数据
+%           \end{itemize}
+% \end{enumerate}
+% \paragraph{windows}
+% \begin{enumerate}
+%     \item 关掉任务栏无用标签，卸载无用软件。(如搜索框，任务视图，微软小娜Cortana，开始菜单里的各种贴图)
+%     \item 可安装TranslucentTB使任务栏透明
+%     \item 理解用户目录，即 C:\verb|\|Users\verb|\|Jony，分别右击用户目录里的下载和文件，属性-->位置-->移动到E盘。
+%     \item 显示文件后缀，打开查看-->选项-->查看，去掉隐藏已知文件扩展名，勾选显示已知文件，文件夹和驱动器。
+%     \item 记住组合键\begin{itemize}
+%               \item Win组合键
+%                     \begin{enumerate}
+%                         \item win + Desktop - 展示桌面
+%                         \item win + 方向键 - 移动窗口
+%                         \item alt + tab - 切换窗口
+%                         \item win + tab - 不怎么常用的切换窗口
+%                         \item win + ctrl + 方向键 - 切换桌面
+%                     \end{enumerate}
+%               \item Ctrl组合键
+%                     \begin{enumerate}
+%                         \item ctrl + All/ctrl + Copy/ctrl + V/ctrl + Z/ctrl + Y
+%                         \item ctrl + Reload/F5
+%                         \item ctrl + P - 打印
+%                     \end{enumerate}
+%           \end{itemize}
+% \end{enumerate}
+% \paragraph{NodeJS, Yarn}
+% \begin{enumerate}
+%     \item 开发必装的东西
+%           \begin{itemize}
+%               \item nrm
+%               \item tldr
+%           \end{itemize}
+% \end{enumerate}
 \section{Git入门}
 \subsection{命令行入门}
 \subsection{本地仓库}
@@ -199,7 +199,40 @@
 \subsection{实践和手机调试}
 \section{CSS}
 \subsection{基础}
+\subsubsection{简介}
+\red{CSS的牛X之处在哪？}答：\yellow{层叠}样式表
+\begin{enumerate}
+    \item 层叠指什么？
+          \begin{itemize}
+              \item \orange{样式层叠}
+              \item 可以多次对同一选择器进行样式声明
+              \item \orange{选择器层叠}
+              \item 可以用不同选择器对同一个元素进行样式声明
+              \item \orange{文件层叠}
+              \item 可以用多个文件进行层叠
+              \item \orange{这些特性使得CSS极度灵魂}
+              \item 这也为CSS后来被吐槽留下了隐患
+          \end{itemize}
+    \item 如何知道哪些浏览器支持哪些特性？
+          \begin{itemize}
+              \item 使用\yellow{caniuse.com}
+          \end{itemize}
+\end{enumerate}
 \subsubsection{语法}
+\red{CSS语法超级简单}
+\begin{enumerate}
+    \item \orange{语法一：样式语法}
+          \begin{lstlisting} 
+            选择器 {
+                属性名: 属性值；
+                /* 注释 */
+            }
+        \end{lstlisting}
+    \item \orange{语法二：at语法}
+          \begin{itemize}
+              \item 使用\yellow{caniuse.com}
+          \end{itemize}
+\end{enumerate}
 \subsubsection{Border调试法}
 \subsubsection{文档流}
 \begin{enumerate}
@@ -758,50 +791,50 @@
               \item 多做个人项目，全方位踩坑。
           \end{itemize}
 \end{enumerate}
-\subsubsection{JS的历史}
-\begin{enumerate}
-    \item JavaScript的诞生
-          \begin{itemize}
-              \item 布兰登生平自行了解，我的总结是成为了领导后千万不能犯错。
-              \item 牛逼的程序员不怕辞退，很容易创业，可以干到50岁以上。
-              \item 公司要求JS的命名蹭Java的流量，现在各行各业也存在者这种营销。
-              \item 由于版权问题，JS又叫ECMAScript。
-              \item 布兰登十天设计了JS最初版本(不是实现)，所以JS有很多bug。
-              \item 网景被微软收购，IE6如日中天。
-              \item 2004谷歌雇佣了一些Firefox和IE的开发者。
-              \item 2016年Chrome全球份额62\%, 横空出世。
-              \item 移动市场智能手机的崛起。
-          \end{itemize}
-    \item JavaScript的兴起
-          \begin{itemize}
-              \item 2004年愚人节，谷歌发布Gmail在线网页，当时人们认为网页只能看新闻和图片。
-              \item 2005年，Jesse将谷歌用到的技术命名为AJAX，从此，前端技术正式出现。
-              \item 用历史唯物主义的观念看，正如现在很多前端概念就是过去技术的打包。
-              \item 在此之前的网页开发都是由后端和设计师完成。
-              \item 2006年，jQuery发布，是目前最长寿的JS库。
-              \item 后来的十年，jQuery大放异彩，直到IE不行了，才稍微没有那么火。
-          \end{itemize}
-    \item 中国的前端
-          \begin{itemize}
-              \item 正式出现时间是2010年左右，中国才有专门的前端岗位。
-              \item 可以用百度指数关键词搜索趋势。
-              \item 早期的前端是一些自学前端的后端程序员，他们把Java思想带入JS
-              \item 因此面向对象成了JS的主流思想。
-              \item 行业还是很缺前端。
-          \end{itemize}
-    \item JavaScript的爆发
-          \begin{itemize}
-              \item Chrome的JS引擎叫做V8, V8原本是跑车引擎的叫法， 快如闪电。
-              \item 2009年，Ryon基于V8创建了Node.js。
-              \item 2010年，Isaac基于Node.js写出了npm。
-              \item 前端工程师可以在浏览器之外执行JS了，Node.js快速风靡。
-              \item 同年，TJ受Sinatra启发，发布了Express.js。
-              \item 至此，前端工程师可以愉快的写后端应用了。
-              \item 至此，爆发了很多技术了，gulp，grunt，yeoman，requireJs，webpack等。
-              \item JS是历史的选择，一开始是玩具，但JS走对了风口，所以活到了最后。
-              \item 总结：类似考研政治，历史人物可以影响事物的进程，但决定不了历史的发展的方向。
-          \end{itemize}
-\end{enumerate}
+% \subsubsection{JS的历史}
+% \begin{enumerate}
+%     \item JavaScript的诞生
+%           \begin{itemize}
+%               \item 布兰登生平自行了解，我的总结是成为了领导后千万不能犯错。
+%               \item 牛逼的程序员不怕辞退，很容易创业，可以干到50岁以上。
+%               \item 公司要求JS的命名蹭Java的流量，现在各行各业也存在者这种营销。
+%               \item 由于版权问题，JS又叫ECMAScript。
+%               \item 布兰登十天设计了JS最初版本(不是实现)，所以JS有很多bug。
+%               \item 网景被微软收购，IE6如日中天。
+%               \item 2004谷歌雇佣了一些Firefox和IE的开发者。
+%               \item 2016年Chrome全球份额62\%, 横空出世。
+%               \item 移动市场智能手机的崛起。
+%           \end{itemize}
+%     \item JavaScript的兴起
+%           \begin{itemize}
+%               \item 2004年愚人节，谷歌发布Gmail在线网页，当时人们认为网页只能看新闻和图片。
+%               \item 2005年，Jesse将谷歌用到的技术命名为AJAX，从此，前端技术正式出现。
+%               \item 用历史唯物主义的观念看，正如现在很多前端概念就是过去技术的打包。
+%               \item 在此之前的网页开发都是由后端和设计师完成。
+%               \item 2006年，jQuery发布，是目前最长寿的JS库。
+%               \item 后来的十年，jQuery大放异彩，直到IE不行了，才稍微没有那么火。
+%           \end{itemize}
+%     \item 中国的前端
+%           \begin{itemize}
+%               \item 正式出现时间是2010年左右，中国才有专门的前端岗位。
+%               \item 可以用百度指数关键词搜索趋势。
+%               \item 早期的前端是一些自学前端的后端程序员，他们把Java思想带入JS
+%               \item 因此面向对象成了JS的主流思想。
+%               \item 行业还是很缺前端。
+%           \end{itemize}
+%     \item JavaScript的爆发
+%           \begin{itemize}
+%               \item Chrome的JS引擎叫做V8, V8原本是跑车引擎的叫法， 快如闪电。
+%               \item 2009年，Ryon基于V8创建了Node.js。
+%               \item 2010年，Isaac基于Node.js写出了npm。
+%               \item 前端工程师可以在浏览器之外执行JS了，Node.js快速风靡。
+%               \item 同年，TJ受Sinatra启发，发布了Express.js。
+%               \item 至此，前端工程师可以愉快的写后端应用了。
+%               \item 至此，爆发了很多技术了，gulp，grunt，yeoman，requireJs，webpack等。
+%               \item JS是历史的选择，一开始是玩具，但JS走对了风口，所以活到了最后。
+%               \item 总结：类似考研政治，历史人物可以影响事物的进程，但决定不了历史的发展的方向。
+%           \end{itemize}
+% \end{enumerate}
 \subsection{内存图与JS世界}
 \subsubsection{操作系统常识}
 \red{一切都运行在内存里}
@@ -1070,130 +1103,130 @@
 \red{\href{https://syuancao.github.io/FrontNotePractice/JS/0-Canvas/index.html}{预览效果} }
 \subsection{JS语法}
 \red{es6是最低要求}
-\subsubsection{JS版本}
-\begin{enumerate}
-    \item 历史版本
-          \begin{itemize}
-              \item ES3，IE6支持，总体评价：垃圾
-              \item ES5，总体评价：还是垃圾
-              \item ES6，大部分浏览器支持，总体评级：一半垃圾一半好
-              \item ES2019与ES6差别不大
-          \end{itemize}
-    \item 为什么说ES6一半垃圾
-          \begin{itemize}
-              \item 因为ES不能删除以前的特性，需要兼容旧网站
-              \item 也就是说以前能运行的网站，以后都要能运行
-              \item 对比Python3你就能知道兼容的好处：稳定
-          \end{itemize}
-    \item 一门语言的价值
-          \begin{itemize}
-              \item 是由其产生的价值决定
-              \item JS是世界上使用最广的语言
-              \item JS是门槛极低的语言(只要你不学糟粕)
-              \item JS是一门能产生价值的语言(虽然不美)
-              \item 它的优秀之处并非原创，它的原创之处并不优秀 -- 来自JS之父的评价
-          \end{itemize}
-\end{enumerate}
-\subsubsection{语法}
-\begin{enumerate}
-    \item 表达式
-          \begin{itemize}
-              \item 1+2表达式的值为3
-              \item add(1,2)表达式的值为函数的返回值
-              \item console.log表达式的值为函数本身
-              \item console.log(3)表达式的值为多少？(undefined)
-          \end{itemize}
-    \item 语句
-          \begin{itemize}
-              \item var a = 1是一个和语句
-          \end{itemize}
-    \item 二者的区别
-          \begin{itemize}
-              \item 表达式一般都有值，语句可能有也可能没有
-              \item 语句一般会改变环境(声明，赋值)
-              \item 上面两句话并不是绝对的
-          \end{itemize}
-    \item 大小写敏感
-          \begin{itemize}
-              \item var a和var A是不同的
-              \item object和Object是不同的
-              \item function和Function是不同的
-              \item 具体含义后面说
-          \end{itemize}
-    \item 空格
-          \begin{itemize}
-              \item 大部分空格没有实际意义
-              \item var a = 1和var a=1没有区别
-              \item 加回车大部分时候也不影响
-              \item 只有一个地方不能加回车，那就是return后面
-          \end{itemize}
-    \item 标识符的规则
-          \begin{itemize}
-              \item 第一个字符，可以是Unicode字母或\$或\-或中字
-              \item 后面的字符，除了上所说，还可以有数字
-              \item 变量名是标识符
-          \end{itemize}
-    \item 区块block
-          \begin{itemize}
-              \item 把代码包在一起
-              \item 常常与if/for/while合用
-          \end{itemize}
-    \item if语句
-          \begin{itemize}
-              \item if(表达式){语句1}else{语句2}
-              \item \{\}在语句只有一句的时候可以省略，但不建议这么做
-          \end{itemize}
-    \item if语句变态情况
-          \begin{itemize}
-              \item 表达式里可以非常变态，如 a = 1
-              \item 语句1里可以非常变态，如嵌套if else
-              \item 语句2里可以非常变态，如嵌套if else
-              \item 缩进也可以很变态，如面试常常下套
-                    \begin{lstlisting} 
-                        a = 1
-                        if (a === 2) 
-                            console.log('a')
-                            console.log('a等于2')
-                    \end{lstlisting}
-          \end{itemize}
-    \item while循环
-          \begin{itemize}
-              \item while(表达式){语句}
-              \item 当表达式为真，执行语句，执行完再判断表达式真假
-              \item 当表达式为假，执行后面的语句
-              \item do ... while可以做用户输入判定
-          \end{itemize}
-    \item for循环
-          \begin{itemize}
-              \item for循环是while的方便写法
-              \item for(语句1;表达式2;语句3) {循环体}
-              \item 不多说了，和C语言一样
-          \end{itemize}
-    \item label语句
-          \begin{itemize}
-              \item 语法
-                    \begin{lstlisting} 
-                foo: {
-                    console.log(1);
-                    break foo;
-                    console.log('本行不会输出);
-                }
-                console.log(2);
+% \subsubsection{JS版本}
+% \begin{enumerate}
+%     \item 历史版本
+%           \begin{itemize}
+%               \item ES3，IE6支持，总体评价：垃圾
+%               \item ES5，总体评价：还是垃圾
+%               \item ES6，大部分浏览器支持，总体评级：一半垃圾一半好
+%               \item ES2019与ES6差别不大
+%           \end{itemize}
+%     \item 为什么说ES6一半垃圾
+%           \begin{itemize}
+%               \item 因为ES不能删除以前的特性，需要兼容旧网站
+%               \item 也就是说以前能运行的网站，以后都要能运行
+%               \item 对比Python3你就能知道兼容的好处：稳定
+%           \end{itemize}
+%     \item 一门语言的价值
+%           \begin{itemize}
+%               \item 是由其产生的价值决定
+%               \item JS是世界上使用最广的语言
+%               \item JS是门槛极低的语言(只要你不学糟粕)
+%               \item JS是一门能产生价值的语言(虽然不美)
+%               \item 它的优秀之处并非原创，它的原创之处并不优秀 -- 来自JS之父的评价
+%           \end{itemize}
+% \end{enumerate}
+% \subsubsection{语法}
+% \begin{enumerate}
+%     \item 表达式
+%           \begin{itemize}
+%               \item 1+2表达式的值为3
+%               \item add(1,2)表达式的值为函数的返回值
+%               \item console.log表达式的值为函数本身
+%               \item console.log(3)表达式的值为多少？(undefined)
+%           \end{itemize}
+%     \item 语句
+%           \begin{itemize}
+%               \item var a = 1是一个和语句
+%           \end{itemize}
+%     \item 二者的区别
+%           \begin{itemize}
+%               \item 表达式一般都有值，语句可能有也可能没有
+%               \item 语句一般会改变环境(声明，赋值)
+%               \item 上面两句话并不是绝对的
+%           \end{itemize}
+%     \item 大小写敏感
+%           \begin{itemize}
+%               \item var a和var A是不同的
+%               \item object和Object是不同的
+%               \item function和Function是不同的
+%               \item 具体含义后面说
+%           \end{itemize}
+%     \item 空格
+%           \begin{itemize}
+%               \item 大部分空格没有实际意义
+%               \item var a = 1和var a=1没有区别
+%               \item 加回车大部分时候也不影响
+%               \item 只有一个地方不能加回车，那就是return后面
+%           \end{itemize}
+%     \item 标识符的规则
+%           \begin{itemize}
+%               \item 第一个字符，可以是Unicode字母或\$或\-或中字
+%               \item 后面的字符，除了上所说，还可以有数字
+%               \item 变量名是标识符
+%           \end{itemize}
+%     \item 区块block
+%           \begin{itemize}
+%               \item 把代码包在一起
+%               \item 常常与if/for/while合用
+%           \end{itemize}
+%     \item if语句
+%           \begin{itemize}
+%               \item if(表达式){语句1}else{语句2}
+%               \item \{\}在语句只有一句的时候可以省略，但不建议这么做
+%           \end{itemize}
+%     \item if语句变态情况
+%           \begin{itemize}
+%               \item 表达式里可以非常变态，如 a = 1
+%               \item 语句1里可以非常变态，如嵌套if else
+%               \item 语句2里可以非常变态，如嵌套if else
+%               \item 缩进也可以很变态，如面试常常下套
+%                     \begin{lstlisting} 
+%                         a = 1
+%                         if (a === 2) 
+%                             console.log('a')
+%                             console.log('a等于2')
+%                     \end{lstlisting}
+%           \end{itemize}
+%     \item while循环
+%           \begin{itemize}
+%               \item while(表达式){语句}
+%               \item 当表达式为真，执行语句，执行完再判断表达式真假
+%               \item 当表达式为假，执行后面的语句
+%               \item do ... while可以做用户输入判定
+%           \end{itemize}
+%     \item for循环
+%           \begin{itemize}
+%               \item for循环是while的方便写法
+%               \item for(语句1;表达式2;语句3) {循环体}
+%               \item 不多说了，和C语言一样
+%           \end{itemize}
+%     \item label语句
+%           \begin{itemize}
+%               \item 语法
+%                     \begin{lstlisting} 
+%                 foo: {
+%                     console.log(1);
+%                     break foo;
+%                     console.log('本行不会输出);
+%                 }
+%                 console.log(2);
 
-                foo: 1; 
+%                 foo: 1; 
 
-                {
-                    foo: 1;
-                }
-            \end{lstlisting}
-              \item 面试:下面的东西是什么？下面是代码块，是label，不是对象
-                    \begin{lstlisting} 
-                        {
-                            foo: 1
-                        }
-            \end{lstlisting}
-          \end{itemize}
-\end{enumerate}
+%                 {
+%                     foo: 1;
+%                 }
+%             \end{lstlisting}
+%               \item 面试:下面的东西是什么？下面是代码块，是label，不是对象
+%                     \begin{lstlisting} 
+%                         {
+%                             foo: 1
+%                         }
+%             \end{lstlisting}
+%           \end{itemize}
+% \end{enumerate}
 \subsubsection{JS数据}
 \begin{enumerate}
     \item 7种数据类型(大小写无所谓)
@@ -1370,30 +1403,6 @@
           \end{itemize}
 \end{enumerate}
 \subsubsection{JS对象分类}
-\red{你可以不会 class，但是一定要学会 prototype}
-\begin{enumerate}
-    \item 历史版本
-          \begin{itemize}
-              \item ES3，IE6支持，总体评价：垃圾
-              \item ES5，总体评价：还是垃圾
-              \item ES6，大部分浏览器支持，总体评级：一半垃圾一半好
-              \item ES2019与ES6差别不大
-          \end{itemize}
-    \item 为什么说ES6一半垃圾
-          \begin{itemize}
-              \item 因为ES不能删除以前的特性，需要兼容旧网站
-              \item 也就是说以前能运行的网站，以后都要能运行
-              \item 对比Python3你就能知道兼容的好处：稳定
-          \end{itemize}
-    \item 一门语言的价值
-          \begin{itemize}
-              \item 是由其产生的价值决定
-              \item JS是世界上使用最广的语言
-              \item JS是门槛极低的语言(只要你不学糟粕)
-              \item JS是一门能产生价值的语言(虽然不美)
-              \item 它的优秀之处并非原创，它的原创之处并不优秀
-          \end{itemize}
-\end{enumerate}
 \section{算法与数据结构}
 \section{JS编程接口}
 \subsection{DOM编程}

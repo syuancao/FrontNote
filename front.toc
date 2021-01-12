@@ -1,110 +1,101 @@
-\contentsline {section}{\numberline {1}软件安装}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}必备软件列表}{4}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}必备软件配置}{4}{subsubsection.1.1.1}%
-\contentsline {paragraph}{vscode}{4}{section*.2}%
-\contentsline {paragraph}{cmder}{5}{section*.3}%
-\contentsline {paragraph}{chrome}{5}{section*.4}%
-\contentsline {paragraph}{windows}{5}{section*.5}%
-\contentsline {paragraph}{NodeJS, Yarn}{6}{section*.6}%
-\contentsline {section}{\numberline {2}Git入门}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}命令行入门}{6}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}本地仓库}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}远程仓库}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}HTML}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}概览}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}标签}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}重难点}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}实践和手机调试}{6}{subsection.3.4}%
-\contentsline {section}{\numberline {4}CSS}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}基础}{6}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}语法}{6}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Border调试法}{6}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}文档流}{6}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}盒模型}{7}{subsubsection.4.1.4}%
-\contentsline {subsubsection}{\numberline {4.1.5}margin合并}{8}{subsubsection.4.1.5}%
-\contentsline {subsubsection}{\numberline {4.1.6}基本单位}{8}{subsubsection.4.1.6}%
-\contentsline {subsubsection}{\numberline {4.1.7}练手项目}{8}{subsubsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.2}布局}{8}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}布局分类}{8}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}两种布局思路}{9}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}float布局}{9}{subsubsection.4.2.3}%
-\contentsline {paragraph}{float布局实践}{9}{section*.7}%
-\contentsline {subsubsection}{\numberline {4.2.4}Flex布局}{10}{subsubsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.5}Grid布局}{10}{subsubsection.4.2.5}%
-\contentsline {paragraph}{语法}{10}{section*.8}%
-\contentsline {paragraph}{例子和语法}{11}{section*.9}%
-\contentsline {subsection}{\numberline {4.3}定位}{11}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}一个div的分层}{11}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}positon的五个取值}{11}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}层叠上下文}{11}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}动画}{11}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}动画的原理}{11}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}浏览器渲染的原理}{11}{subsubsection.4.4.2}%
-\contentsline {paragraph}{浏览器渲染过程}{11}{section*.10}%
-\contentsline {paragraph}{三棵树}{11}{section*.11}%
-\contentsline {paragraph}{如何更新样式}{11}{section*.12}%
-\contentsline {paragraph}{三种更新方式}{11}{section*.13}%
-\contentsline {paragraph}{三种更新方式区别}{12}{section*.14}%
-\contentsline {subsubsection}{\numberline {4.4.3}CSS动画优化}{12}{subsubsection.4.4.3}%
-\contentsline {paragraph}{JS优化}{12}{section*.15}%
-\contentsline {paragraph}{JS优化}{12}{section*.16}%
-\contentsline {paragraph}{参考文章}{12}{section*.17}%
-\contentsline {subsubsection}{\numberline {4.4.4}transition}{12}{subsubsection.4.4.4}%
-\contentsline {paragraph}{经验}{12}{section*.18}%
-\contentsline {paragraph}{translate}{12}{section*.19}%
-\contentsline {paragraph}{scale}{13}{section*.20}%
-\contentsline {paragraph}{rotate}{13}{section*.21}%
-\contentsline {paragraph}{skew}{13}{section*.22}%
-\contentsline {paragraph}{transform多重效果}{13}{section*.23}%
-\contentsline {paragraph}{参考文章}{13}{section*.24}%
-\contentsline {subsubsection}{\numberline {4.4.5}transition过渡}{14}{subsubsection.4.4.5}%
-\contentsline {subsubsection}{\numberline {4.4.6}红心实践}{14}{subsubsection.4.4.6}%
-\contentsline {section}{\numberline {5}HTTP}{14}{section.5}%
-\contentsline {subsection}{\numberline {5.1}URL}{14}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}IP}{14}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}端口}{15}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}域名}{15}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}HTTP协议}{17}{subsubsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.2}请求响应和NodeJS Sever}{17}{subsection.5.2}%
-\contentsline {section}{\numberline {6}JS}{17}{section.6}%
-\contentsline {subsection}{\numberline {6.1}概览}{17}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}硬要求}{17}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}JS的历史}{18}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}内存图与JS世界}{19}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}操作系统常识}{19}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}内存图}{20}{subsubsection.6.2.2}%
-\contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{21}{subsubsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.4}原型链}{23}{subsubsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{25}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}JS语法}{25}{subsection.6.4}%
-\contentsline {subsubsection}{\numberline {6.4.1}JS版本}{26}{subsubsection.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.4.2}语法}{26}{subsubsection.6.4.2}%
-\contentsline {subsubsection}{\numberline {6.4.3}JS数据}{28}{subsubsection.6.4.3}%
-\contentsline {subsubsection}{\numberline {6.4.4}JS对象}{29}{subsubsection.6.4.4}%
-\contentsline {subsubsection}{\numberline {6.4.5}JS对象分类}{31}{subsubsection.6.4.5}%
-\contentsline {section}{\numberline {7}算法与数据结构}{32}{section.7}%
-\contentsline {section}{\numberline {8}JS编程接口}{32}{section.8}%
-\contentsline {subsection}{\numberline {8.1}DOM编程}{32}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}DOM简介}{32}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}获取元素的API}{33}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.3}元素的6层原型链}{33}{subsubsection.8.1.3}%
-\contentsline {subsubsection}{\numberline {8.1.4}创建元素的API}{33}{subsubsection.8.1.4}%
-\contentsline {subsubsection}{\numberline {8.1.5}查看元素的API}{33}{subsubsection.8.1.5}%
-\contentsline {subsubsection}{\numberline {8.1.6}DOM操作跨线程}{33}{subsubsection.8.1.6}%
-\contentsline {subsection}{\numberline {8.2}手写DOM库}{33}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}jQuery中的设计模式}{33}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}DOM事件与事件委托}{33}{subsection.8.4}%
-\contentsline {section}{\numberline {9}前端站点导航}{39}{section.9}%
-\contentsline {section}{\numberline {10}前后分离}{39}{section.10}%
-\contentsline {subsection}{\numberline {10.1}AJAX的原理}{39}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}异步与Promise}{39}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}跨域，CORS，JSONP}{39}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}静态服务器}{44}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Ajax实战：Cookie，Session}{44}{subsection.10.5}%
-\contentsline {section}{\numberline {11}MVC}{44}{section.11}%
-\contentsline {section}{\numberline {12}Webpack}{44}{section.12}%
-\contentsline {section}{\numberline {13}虚拟DOM与DOM diff}{44}{section.13}%
-\contentsline {section}{\numberline {14}Vue}{44}{section.14}%
-\contentsline {section}{\numberline {15}React}{44}{section.15}%
-\contentsline {section}{\numberline {16}NodeJS}{44}{section.16}%
-\contentsline {section}{\numberline {17}Vue3造轮子}{44}{section.17}%
+\contentsline {section}{\numberline {1}软件安装与配置}{4}{section.1}%
+\contentsline {section}{\numberline {2}Git入门}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}命令行入门}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}本地仓库}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}远程仓库}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}HTML}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}概览}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}标签}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}重难点}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}实践和手机调试}{4}{subsection.3.4}%
+\contentsline {section}{\numberline {4}CSS}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}基础}{4}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}简介}{4}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}语法}{5}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Border调试法}{5}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}文档流}{5}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}盒模型}{6}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {4.1.6}margin合并}{6}{subsubsection.4.1.6}%
+\contentsline {subsubsection}{\numberline {4.1.7}基本单位}{6}{subsubsection.4.1.7}%
+\contentsline {subsubsection}{\numberline {4.1.8}练手项目}{7}{subsubsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.2}布局}{7}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}布局分类}{7}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}两种布局思路}{7}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}float布局}{7}{subsubsection.4.2.3}%
+\contentsline {paragraph}{float布局实践}{8}{section*.2}%
+\contentsline {subsubsection}{\numberline {4.2.4}Flex布局}{8}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Grid布局}{9}{subsubsection.4.2.5}%
+\contentsline {paragraph}{语法}{9}{section*.3}%
+\contentsline {paragraph}{例子和语法}{9}{section*.4}%
+\contentsline {subsection}{\numberline {4.3}定位}{9}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}一个div的分层}{9}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}positon的五个取值}{9}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}层叠上下文}{9}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}动画}{9}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}动画的原理}{9}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}浏览器渲染的原理}{9}{subsubsection.4.4.2}%
+\contentsline {paragraph}{浏览器渲染过程}{9}{section*.5}%
+\contentsline {paragraph}{三棵树}{9}{section*.6}%
+\contentsline {paragraph}{如何更新样式}{10}{section*.7}%
+\contentsline {paragraph}{三种更新方式}{10}{section*.8}%
+\contentsline {paragraph}{三种更新方式区别}{10}{section*.9}%
+\contentsline {subsubsection}{\numberline {4.4.3}CSS动画优化}{10}{subsubsection.4.4.3}%
+\contentsline {paragraph}{JS优化}{10}{section*.10}%
+\contentsline {paragraph}{JS优化}{10}{section*.11}%
+\contentsline {paragraph}{参考文章}{10}{section*.12}%
+\contentsline {subsubsection}{\numberline {4.4.4}transition}{10}{subsubsection.4.4.4}%
+\contentsline {paragraph}{经验}{10}{section*.13}%
+\contentsline {paragraph}{translate}{11}{section*.14}%
+\contentsline {paragraph}{scale}{11}{section*.15}%
+\contentsline {paragraph}{rotate}{11}{section*.16}%
+\contentsline {paragraph}{skew}{12}{section*.17}%
+\contentsline {paragraph}{transform多重效果}{12}{section*.18}%
+\contentsline {paragraph}{参考文章}{12}{section*.19}%
+\contentsline {subsubsection}{\numberline {4.4.5}transition过渡}{12}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}红心实践}{12}{subsubsection.4.4.6}%
+\contentsline {section}{\numberline {5}HTTP}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}URL}{12}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}IP}{12}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}端口}{13}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}域名}{14}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}HTTP协议}{15}{subsubsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.2}请求响应和NodeJS Sever}{15}{subsection.5.2}%
+\contentsline {section}{\numberline {6}JS}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}概览}{15}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}硬要求}{15}{subsubsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.2}内存图与JS世界}{16}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}操作系统常识}{16}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}内存图}{17}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}JS的世界是怎样的}{19}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}原型链}{20}{subsubsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.3}Canvas实践--画图板}{23}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}JS语法}{23}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}JS数据}{23}{subsubsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.2}JS对象}{24}{subsubsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.3}JS对象分类}{26}{subsubsection.6.4.3}%
+\contentsline {section}{\numberline {7}算法与数据结构}{26}{section.7}%
+\contentsline {section}{\numberline {8}JS编程接口}{26}{section.8}%
+\contentsline {subsection}{\numberline {8.1}DOM编程}{26}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}DOM简介}{26}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}获取元素的API}{28}{subsubsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.3}元素的6层原型链}{28}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.4}创建元素的API}{28}{subsubsection.8.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.5}查看元素的API}{28}{subsubsection.8.1.5}%
+\contentsline {subsubsection}{\numberline {8.1.6}DOM操作跨线程}{28}{subsubsection.8.1.6}%
+\contentsline {subsection}{\numberline {8.2}手写DOM库}{28}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}jQuery中的设计模式}{28}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}DOM事件与事件委托}{28}{subsection.8.4}%
+\contentsline {section}{\numberline {9}前端站点导航}{34}{section.9}%
+\contentsline {section}{\numberline {10}前后分离}{34}{section.10}%
+\contentsline {subsection}{\numberline {10.1}AJAX的原理}{34}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}异步与Promise}{34}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}跨域，CORS，JSONP}{34}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}静态服务器}{39}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Ajax实战：Cookie，Session}{39}{subsection.10.5}%
+\contentsline {section}{\numberline {11}MVC}{39}{section.11}%
+\contentsline {section}{\numberline {12}Webpack}{39}{section.12}%
+\contentsline {section}{\numberline {13}虚拟DOM与DOM diff}{39}{section.13}%
+\contentsline {section}{\numberline {14}Vue}{39}{section.14}%
+\contentsline {section}{\numberline {15}React}{39}{section.15}%
+\contentsline {section}{\numberline {16}NodeJS}{39}{section.16}%
+\contentsline {section}{\numberline {17}Vue3造轮子}{39}{section.17}%
