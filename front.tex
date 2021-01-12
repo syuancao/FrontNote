@@ -234,23 +234,33 @@
           \end{itemize}
 \end{enumerate}
 \subsubsection{Border调试法}
+\red{类似log调试法，很重要}
+\begin{lstlisting} 
+border: 1px solid red;
+\end{lstlisting}
 \subsubsection{文档流}
+\red{Normal Flow}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/normalflow.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{文档流动方向} %最终文档中希望显示的图片标题
+\end{figure}
 \begin{enumerate}
-    \item 文档流的基本概念
+    \item \red{文档流}的基本概念
           \begin{itemize}
-              \item 流动方向
+              \item \orange{流动方向}
                     \begin{itemize}
                         \item inline元素从左到右，到达最右边才会换行
                         \item block元素从上到下，每一个都另起一行
                         \item inline-block也是从左到右
                     \end{itemize}
-              \item 宽度
+              \item \orange{宽度}
                     \begin{itemize}
                         \item inline宽度为内部inline元素的和，不能用width指定
                         \item block默认自动计算宽度，可用width指定
                         \item inline-block结合前两者特点，可用width
                     \end{itemize}
-              \item 高度
+              \item \orange{高度}
                     \begin{itemize}
                         \item inline高度由line-height间接确定，跟height无关
                         \item block高度由文档流元素决定，可以设height
@@ -259,7 +269,7 @@
           \end{itemize}
     \item overflow 溢出
           \begin{itemize}
-              \item 当内容大于容器
+              \item \orange{当内容大于容器}
                     \begin{itemize}
                         \item 等内容的宽度或高度大于容器，会溢出
                         \item 可用overflow来设置是否显示滚动条
@@ -272,31 +282,41 @@
           \end{itemize}
     \item 脱离文档流
           \begin{itemize}
-              \item 有些元素可不在文档流
+              \item \orange{回忆一下}
+                    \begin{itemize}
+                        \item block高度由内部文档流元素决定，可以设height
+                        \item 这句话的意识是不是说，有些元素可以不在文档流中？
+                    \end{itemize}
+              \item \orange{有些元素可不在文档流}
                     \begin{itemize}
                         \item 原因是block高度由内部文档流元素决定，可以设height
                     \end{itemize}
-              \item 以下元素脱离文档流
+              \item \orange{以下元素脱离文档流}
                     \begin{itemize}
                         \item float
                         \item position:absolute/fixed
                     \end{itemize}
-              \item 不用以上属性就不脱离文档流
+              \item \orange{不用以上属性就不脱离文档流}
           \end{itemize}
 \end{enumerate}
 \subsubsection{盒模型}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/box.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{content-box和border-box} %最终文档中希望显示的图片标题
+\end{figure}
 \begin{enumerate}
-    \item 两种
+    \item \orange{两种}
           \begin{itemize}
               \item content-box内容盒 - 内容就是盒子的边界
               \item border-box边框盒 - 边框才是盒子的边界
           \end{itemize}
-    \item 公式
+    \item \orange{公式}
           \begin{itemize}
               \item content-box width = 内容宽度
               \item border-box width = 内容宽度 + padding + border
           \end{itemize}
-    \item 哪个好用？
+    \item \orange{哪个好用？}
           \begin{itemize}
               \item border-box好用
               \item 因为可以同时指定padding, width, border
@@ -304,12 +324,12 @@
 \end{enumerate}
 \subsubsection{margin合并}
 \begin{enumerate}
-    \item 哪些情况会合并
+    \item \orange{哪些情况会合并}
           \begin{itemize}
               \item 父子margin合并
               \item 兄弟margin合并
           \end{itemize}
-    \item 如何阻止合并
+    \item \orange{如何阻止合并}
           \begin{itemize}
               \item 父子合并用padding/border挡住
               \item 父子合并用overflow:hidden挡住
@@ -321,16 +341,16 @@
 \end{enumerate}
 \subsubsection{基本单位}
 \begin{enumerate}
-    \item 长度单位
+    \item \orange{长度单位}
           \begin{itemize}
               \item px像素
               \item em相对于自身font-size的倍数
               \item 百分数
               \item 整数
-              \item rem
+              \item rem:等你把em滚瓜烂熟了再问rem
               \item vw和vh
           \end{itemize}
-    \item 颜色
+    \item \orange{颜色}
           \begin{itemize}
               \item 十六进制\#FF6600或者\#F60
               \item RGBA颜色rgb(0,0,0)或者rgba(0,0,0,1)
