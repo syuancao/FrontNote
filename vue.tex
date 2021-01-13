@@ -1,0 +1,284 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb,amsfonts}%equation need this 
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx} %插入图片的宏包
+\usepackage{float} %设置图片浮动位置的宏包
+\usepackage{subfigure} %插入多图时用子图显示的宏包
+\usepackage[a4paper, left = 10mm, right = 10mm, top = 15mm, bottom = 15mm]{geometry}
+
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand{\green}[1]{{\color{green}{#1}}}
+\newcommand{\yellow}[1]{{\color{yellow}{#1}}}
+\newcommand{\orange}[1]{{\color{orange}{#1}}}
+\newcommand{\blue}[1]{{\color{blue}{#1}}}
+\newcommand{\pink}[1]{{\color{pink}{#1}}}
+\newcommand{\tiffany}[1]{{\color{tiffany}{#1}}}
+\newcommand{\p}{\par }
+\newcommand{\pl}{\par \ \par}
+\newcommand{\s}[1]{${#1}$}
+
+\definecolor{tiffany}{RGB}{127, 208, 201}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+ 
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+%    numbers=left,
+%    numberstyle=\footnotesize,
+%    numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+\title{Vue笔记}
+\author{曹思远}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\begin{abstract}
+    vue笔记
+\end{abstract}
+
+\section{起手式}
+\subsection{Vue自学路线图}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/vuelearn.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{Vue自学路线图} %最终文档中希望显示的图片标题
+\end{figure}
+\subsection{项目搭建}
+\red{搞出一个使用Vue的项目}
+\subsubsection{两种方法}
+\begin{enumerate}
+    \item \orange{方法一: 使用@vue/cli}
+          \begin{itemize}
+              \item 搜索@vue/cli，进入官网
+              \item 打开文档，打开创建一个项目章节
+          \end{itemize}
+    \item \orange{方法二: 自己从零搭建Vue项目}
+          \begin{itemize}
+              \item 使用webpack或者rollup从零开始
+              \item 适合老手
+          \end{itemize}
+\end{enumerate}
+\subsubsection{@vue/cli用法}
+\begin{enumerate}
+    \item 全局安装：yarn global add @vue/cli
+    \item 创建目录：vue create路径 (路径可以用.点)
+    \item 选择使用哪些配置
+    \item 进入目录，运行yarn serve开启webpack-dev-server
+    \item 用WebStorm或VSCode打开项目开始干
+    \item 进入@vue/cli官网看目录
+\end{enumerate}
+\subsubsection{安装Vue的选项}
+\begin{enumerate}
+    \item 选错了请Ctrl+C中断然后重来
+    \item 没有截图的都使用默认选项
+    \item 真实项目自行斟酌
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/vue0.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              %\caption{Vue自学路线图} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/vue1.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              %\caption{Vue自学路线图} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/vue3.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              %\caption{Vue自学路线图} %最终文档中希望显示的图片标题
+          \end{figure}
+    \item \yellow{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-demo-0}{vue demo地址}}}
+\end{enumerate}
+\subsection{Vue实例}
+\red{很重要，做项目必须用到}
+\subsubsection{如何使用Vue实例}
+\begin{enumerate}
+    \item \orange{方法一: 从HTML得到视图}
+          \begin{itemize}
+              \item 也就是文档里说的完整版Vue
+              \item 从CDN引入vue.js或vue.min.js
+              \item 也可以通过import引入vue.js或者vue.min.js
+              \item 完整版视图支持从html引入
+              \item 也可以用template写在js里面
+              \item 完整版不好的地方是给用户的体积变大了
+          \end{itemize}
+    \item \orange{方法二: 用JS构建视图}
+          \begin{itemize}
+              \item 使用vue.runtime.js，也就是非完整版
+              \item 不支持从html里获得视图，template也不行
+              \item 这种方法不方便，但实际是对的
+              \item 必须要用render(createElement)的方式把所有元素构造出来
+                    \begin{lstlisting}
+                new Vue({
+                    el: "#app",
+                    render(createElement) {
+                        const h = createElement;
+                        return h('div', [this.n, h('button', {
+                            on:{click:this.add}, '+1'
+                        })])
+                    },
+                    data: {
+                        n: 0
+                    },
+                    methods: {
+                        add() {
+                            this.n += 1
+                        }
+                    }
+                })
+            \end{lstlisting}
+              \item 好处是更加的独立，不需要编译器，减少百分之30的体积
+          \end{itemize}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/runtimevue.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{完整版与不完整版的区别} %最终文档中希望显示的图片标题
+          \end{figure}
+    \item \orange{方法三:使用vue-loader}
+          \begin{itemize}
+              \item 可以把.vue文件以及其template里的东西翻译成h构建方法
+              \item 但这样做HTML就只有一个div\#app，SEO不友好
+              \item 通过webpack让用户写的时候是完整版，但实际下载的时候是非完整版
+          \end{itemize}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/webpackvue.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{用webpack通过vue-loader转化减少代码体积} %最终文档中希望显示的图片标题
+          \end{figure}
+\end{enumerate}
+\subsubsection{Vue实例的作用}
+\begin{enumerate}
+    \item \orange{Vue实例就如同jQuery实例}
+          \begin{itemize}
+              \item 封装了对DOM的所有操作
+              \item 封装了对data的所有操作
+          \end{itemize}
+    \item \orange{操作DOM}
+          \begin{itemize}
+              \item 无非就是监听事件，改变DOM
+          \end{itemize}
+    \item \orange{操作data}
+          \begin{itemize}
+              \item 无非就是增删改查
+              \item Vue2还有一个bug(面试考，在后面响应式原理里)
+          \end{itemize}
+    \item \orange{没有封装ajax}
+          \begin{itemize}
+              \item 用axios的ajax功能
+          \end{itemize}
+\end{enumerate}
+\subsubsection{SEO基本原理}
+\begin{enumerate}
+    \item \orange{seo友好}
+          \begin{itemize}
+              \item 搜索引擎优化
+              \item 你可以认为搜索引擎就是不停地curl
+              \item 搜索引擎根据curl结果猜测页面内容
+              \item 如果你的页面都是用JS创建的div，那么curl就很瞎
+          \end{itemize}
+    \item \orange{那怎么办}
+          \begin{itemize}
+              \item 给curl一点内容
+              \item 把title，description, keyword, h1, a写好即可
+              \item 原则：让curl能得到页面的信息，seo就能正常工作
+          \end{itemize}
+\end{enumerate}
+\subsection{理解两种vue的区别}
+\subsubsection{深入理解}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/diffvue.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{两种vue版本的区别} %最终文档中希望显示的图片标题
+\end{figure}
+\subsubsection{引用错了会怎样}
+\begin{enumerate}
+    \item \orange{vue.js错用成了vue.runtime.js}
+          \begin{itemize}
+              \item 无法将HTML编译成视图
+          \end{itemize}
+    \item \orange{vue.runtime.js错用成vue.js}
+          \begin{itemize}
+              \item 代码体积变大，因为vue.js有编译HTML的功能
+          \end{itemize}
+\end{enumerate}
+\section{构造选项}
+\subsection{new Vue里有什么}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/vuememory.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{实例的内存图} %最终文档中希望显示的图片标题
+\end{figure}
+\subsection{options里有什么}
+\subsubsection{options里的五类属性}
+\begin{enumerate}
+    \item \orange{数据}
+          \begin{itemize}
+              \item data, props, propsData, computed, methods, watch
+          \end{itemize}
+    \item \orange{DOM}
+          \begin{itemize}
+              \item el, template, render, renderError
+          \end{itemize}
+    \item \orange{生命周期钩子}
+          \begin{itemize}
+              \item beforeCreate, created, beforeMount, mount, beforeUpdate, updated
+              \item activated, deactivated, beforeDestroy, destroyed, errorCaptured
+          \end{itemize}
+    \item \orange{资源}
+          \begin{itemize}
+              \item directives, filters, components
+          \end{itemize}
+    \item \orange{组合}
+          \begin{itemize}
+              \item parent, mixins, extends, provide, inject
+          \end{itemize}
+\end{enumerate}
+\subsubsection{属性分段}
+\subsubsection{入门属性}
+\subsection{el和data选项}
+\subsection{methods, components, 四个钩子}
+\subsection{props}
+\section{数据响应式}
+\section{computed和watch}
+\section{模板，指令与修饰符}
+\section{进阶构造属性}
+\section{表单与v-model}
+\section{Vue Router-前端路由实现思路}
+\section{深入理解Vue动画原理}
+\end{document}
