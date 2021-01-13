@@ -450,7 +450,7 @@ border: 1px solid red;
     \caption{容器container} %最终文档中希望显示的图片标题
 \end{figure}
 \begin{enumerate}
-    \item flex container 有哪些样式
+    \item \orange{flex container 有哪些样式}
           \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
               \centering %图片居中
               \includegraphics[width=0.7\textwidth]{image/flexcontainer.png} %插入图片，[]中设置图片大小，{}中是图片文件名
@@ -481,8 +481,31 @@ border: 1px solid red;
               \includegraphics[width=0.7\textwidth]{image/flexline.png} %插入图片，[]中设置图片大小，{}中是图片文件名
               \caption{多行内容} %最终文档中希望显示的图片标题
           \end{figure}
-    \item flex container 有哪些属性
-    \item 重点
+    \item \orange{flex container 有哪些属性}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/itemorder.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{item上面加order} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexgrow.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{item上面加flex-grow} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{itemize}
+              \item flex-shrink控制如何变瘦
+              \item \orange{一般写flex-shrink:0防止变瘦，默认是1}
+              \item flex-basis控制基准宽度
+              \item \orange{默认是auto}
+              \item flex:flex-grow flex-shrink flex-basis
+              \item \orange{缩写，空格隔开}
+          \end{itemize}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/alignself.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{align-self定制align-items} %最终文档中希望显示的图片标题
+          \end{figure}
+    \item \orange{重点:工作中基本只用这些}
           \begin{itemize}
               \item display：flex
               \item flex-direction：row/column
@@ -490,33 +513,28 @@ border: 1px solid red;
               \item just-content:center/space-between
               \item align-item:center
           \end{itemize}
-    \item 颜色
-          \begin{itemize}
-              \item 十六进制\#FF6600或者\#F60
-              \item RGBA颜色rgb(0,0,0)或者rgba(0,0,0,1)
-              \item hsl颜色hsl(360,100$\%$, 100$\%$)
-          \end{itemize}
-    \item 实践
+    \item \orange{实践:不同布局}
           \begin{itemize}
               \item 用flex做两栏布局
               \item 用flex做三栏布局
               \item 用flex做四栏布局
               \item 用flex做平均布局
               \item 用flex组合使用，做更复杂的布局
-              \item
+              \item \tiffany{\underline{\href{https://syuancao.github.io/FrontNotePractice/CSS/floatLayout/index.html}{预览地址}}}
+              \item \yellow{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/CSS/floatLayout}{代码地址}}}
           \end{itemize}
-    \item 经验
+    \item \orange{经验}
           \begin{itemize}
               \item 永远不要把width和height写死，除非特殊说明
               \item 用min-width/max-width/min-height/max-height
               \item flex可以基本满足所有需求
               \item flex和margin-xxx：auto配合有意外的效果
           \end{itemize}
-    \item 什么是写死
+    \item \orange{什么是写死}
           \begin{itemize}
               \item width:100px
           \end{itemize}
-    \item 不写死
+    \item \orange{不写死}
           \begin{itemize}
               \item width:50\%
               \item max-width:100px
