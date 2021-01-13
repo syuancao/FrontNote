@@ -20,6 +20,8 @@
 \newcommand{\blue}[1]{{\color{blue}{#1}}}
 \newcommand{\pink}[1]{{\color{pink}{#1}}}
 \newcommand{\tiffany}[1]{{\color{tiffany}{#1}}}
+\newcommand{\purple}[1]{{\color{purple}{#1}}}
+\newcommand{\darkgray}[1]{{\color{darkgray}{#1}}}
 \newcommand{\p}{\par }
 \newcommand{\pl}{\par \ \par}
 \newcommand{\s}[1]{${#1}$}
@@ -249,31 +251,87 @@
 \begin{enumerate}
     \item \orange{数据}
           \begin{itemize}
-              \item data, props, propsData, computed, methods, watch
+              \item \red{data, props}, \blue{propsData}, \yellow{computed}, \red{methods}, \yellow{watch}
           \end{itemize}
     \item \orange{DOM}
           \begin{itemize}
-              \item el, template, render, renderError
+              \item \red{el}, \purple{template}, \blue{render}, \green{renderError}
           \end{itemize}
     \item \orange{生命周期钩子}
           \begin{itemize}
-              \item beforeCreate, created, beforeMount, mount, beforeUpdate, updated
-              \item activated, deactivated, beforeDestroy, destroyed, errorCaptured
+              \item \green{beforeCreate}, \red{created}, \green{beforeMount}, \red{mounted}, \green{beforeUpdate}, \red{updated}
+              \item \yellow{activated}, \yellow{deactivated}, \green{beforeDestroy},  \red{destroyed},  errorCaptured
           \end{itemize}
     \item \orange{资源}
           \begin{itemize}
-              \item directives, filters, components
+              \item \yellow{directives}, \purple{filters}, \red{components}
           \end{itemize}
     \item \orange{组合}
           \begin{itemize}
-              \item parent, mixins, extends, provide, inject
+              \item parent, \yellow{mixins, extends, provide, inject}
           \end{itemize}
 \end{enumerate}
 \subsubsection{属性分段}
+\begin{enumerate}
+    \item \orange{红色属性(9)}
+          \begin{itemize}
+              \item 好学，必学，几句话就能说明白
+          \end{itemize}
+    \item \orange{黄色属性(9)}
+          \begin{itemize}
+              \item 高级属性，稍微费点力
+          \end{itemize}
+    \item \orange{绿色属性(5)}
+          \begin{itemize}
+              \item 简单
+          \end{itemize}
+    \item \orange{蓝色属性(2)}
+          \begin{itemize}
+              \item 不常用，可学可不学
+          \end{itemize}
+    \item \orange{紫色属性(2)}
+          \begin{itemize}
+              \item 比较特殊，重点
+          \end{itemize}
+    \item \orange{黑色属性(3)}
+          \begin{itemize}
+              \item 很不常用，用的时候看一下文档
+          \end{itemize}
+\end{enumerate}
 \subsubsection{入门属性}
-\subsection{el和data选项}
-\subsection{methods, components, 四个钩子}
-\subsection{props}
+\begin{enumerate}
+    \item \orange{el - 挂载点}
+          \begin{itemize}
+              \item 可以用\$mount代替
+          \end{itemize}
+    \item \orange{data - 内部数据}
+          \begin{itemize}
+              \item 支持对象和函数，优先用函数
+          \end{itemize}
+    \item \orange{methods - 方法}
+          \begin{itemize}
+              \item 事件处理函数或者是普通函数
+          \end{itemize}
+    \item \orange{components}
+          \begin{itemize}
+              \item Vue组件，注意大小写
+              \item 三种引入方式，优先使用模块化
+          \end{itemize}
+    \item \orange{四个钩子}
+          \begin{itemize}
+              \item created - 实例出现在内存中
+              \item mounted - 实例出现在页面中
+              \item updated - 实例更新了
+              \item destroyed - 实例从页面和内存中消亡了(可用切换visible演示)
+          \end{itemize}
+    \item \orange{props - 外部数据}
+          \begin{itemize}
+              \item 也叫属性
+              \item message='n'传入字符串
+              \item :message='n'传入this.n数据
+              \item :fn='add'传入this.add函数
+          \end{itemize}
+\end{enumerate}
 \section{数据响应式}
 \section{computed和watch}
 \section{模板，指令与修饰符}
