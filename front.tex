@@ -28,6 +28,7 @@
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+ 
 
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
@@ -359,20 +360,24 @@ border: 1px solid red;
 \end{enumerate}
 \subsubsection{练手项目}
 \red{彩虹demo}
-\pl
+\p
+\tiffany{\underline{\href{https://syuancao.github.io/FrontNotePractice/CSS/rainbow/index.html}{预览地址}}}
+\p
+\yellow{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/CSS/rainbow}{代码地址}}}
 \subsection{布局}
+\red{布局就是把页面分成一块一块，按左中右，上中下等排列}
 \subsubsection{布局分类}
 \begin{enumerate}
-    \item 两种
+    \item \orange{两种}
           \begin{itemize}
               \item 固定宽度布局，一般宽度为960/1000/1024px
               \item 不固定宽度布局，主要靠文档流的原来布局
           \end{itemize}
-    \item 回顾
+    \item \orange{回顾}
           \begin{itemize}
               \item 文档流本来就是自适应的，不需要加额外的样式
           \end{itemize}
-    \item 响应式布局
+    \item \orange{响应式布局}
           \begin{itemize}
               \item PC上固定宽度，手机上不固定宽度
               \item 也就是一种混合布局
@@ -380,31 +385,35 @@ border: 1px solid red;
 \end{enumerate}
 \subsubsection{两种布局思路}
 \begin{enumerate}
-    \item 从大到小
+    \item \orange{从大到小}
           \begin{itemize}
               \item 先定下大局
               \item 然后完善每个部分的小布局
           \end{itemize}
-    \item 从小到大
+    \item \orange{从小到大}
           \begin{itemize}
               \item 先完成小布局
               \item 然后组合成大布局
           \end{itemize}
-    \item 两种均可
+    \item \orange{两种均可}
           \begin{itemize}
               \item 新人推荐第二种，因为小的简单
               \item 老手一般用第一种，因为熟练有大局观
           \end{itemize}
 \end{enumerate}
 \subsubsection{float布局}
-一图流(图片以后贴出)
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/onepic.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{一图流} %最终文档中希望显示的图片标题
+\end{figure}
 \begin{enumerate}
-    \item float布局
+    \item \orange{float布局}
           \begin{itemize}
               \item 子元素加上float:left和width
               \item \red{在父元素上加.clearfix}
           \end{itemize}
-    \item float布局经验
+    \item \orange{float布局经验}
           \begin{itemize}
               \item 留一些空间或者最后一个不设width
               \item 不需要做响应式，因为手机上没有IE，而这个布局是专门为IE准备的
@@ -415,7 +424,7 @@ border: 1px solid red;
 \end{enumerate}
 \paragraph{float布局实践}
 \begin{enumerate}
-    \item 不同布局
+    \item \orange{不同布局}
           \begin{itemize}
               \item 用float做两栏布局(如顶部条)
               \item 用float做三栏布局(如内容区)
@@ -423,16 +432,56 @@ border: 1px solid red;
               \item 用float做平均布局(如产品展示区)
               \item
           \end{itemize}
-    \item 实践经验
+    \item \orange{实践经验}
           \begin{itemize}
               \item 加上头尾，即可满足所有PC页面需求
               \item 手机页面傻子采用float
               \item float要程序员自己计算宽度，不灵活
               \item float用来应付IE足矣
+              \item \tiffany{\underline{\href{https://syuancao.github.io/FrontNotePractice/CSS/floatLayout/index.html}{预览地址}}}
+              \item \yellow{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/CSS/floatLayout}{代码地址}}}
           \end{itemize}
 \end{enumerate}
 \subsubsection{Flex布局}
+\red{工作中常用flex布局}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/container.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{容器container} %最终文档中希望显示的图片标题
+\end{figure}
 \begin{enumerate}
+    \item flex container 有哪些样式
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexcontainer.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{让一个元素变成flex容器} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexdirection.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{改变items流动方向(主轴)} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexwrap.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{改变折行} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexstart.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{主轴对齐方式} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexend.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{次轴对齐} %最终文档中希望显示的图片标题
+          \end{figure}
+          \begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+              \centering %图片居中
+              \includegraphics[width=0.7\textwidth]{image/flexline.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+              \caption{多行内容} %最终文档中希望显示的图片标题
+          \end{figure}
+    \item flex container 有哪些属性
     \item 重点
           \begin{itemize}
               \item display：flex

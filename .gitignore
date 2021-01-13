@@ -1,0 +1,6 @@
+image/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
