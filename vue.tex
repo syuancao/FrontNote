@@ -125,7 +125,7 @@
               \includegraphics[width=0.7\textwidth]{image/vue3.png} %插入图片，[]中设置图片大小，{}中是图片文件名
               %\caption{Vue自学路线图} %最终文档中希望显示的图片标题
           \end{figure}
-    \item \yellow{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-demo-0}{vue demo地址}}}
+    \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-demo-0}{vue demo地址}}}
 \end{enumerate}
 \subsection{Vue实例}
 \red{很重要，做项目必须用到}
@@ -273,32 +273,39 @@
 \end{enumerate}
 \subsubsection{属性分段}
 \begin{enumerate}
-    \item \orange{红色属性(9)}
+    \item \red{红色属性(9)}
           \begin{itemize}
               \item 好学，必学，几句话就能说明白
           \end{itemize}
-    \item \orange{黄色属性(9)}
+    \item \yellow{黄色属性(9)}
           \begin{itemize}
               \item 高级属性，稍微费点力
           \end{itemize}
-    \item \orange{绿色属性(5)}
+    \item \green{绿色属性(5)}
           \begin{itemize}
               \item 简单
           \end{itemize}
-    \item \orange{蓝色属性(2)}
+    \item \blue{蓝色属性(2)}
           \begin{itemize}
               \item 不常用，可学可不学
           \end{itemize}
-    \item \orange{紫色属性(2)}
+    \item \purple{紫色属性(2)}
           \begin{itemize}
               \item 比较特殊，重点
           \end{itemize}
-    \item \orange{黑色属性(3)}
+    \item 黑色属性(3)
           \begin{itemize}
               \item 很不常用，用的时候看一下文档
           \end{itemize}
 \end{enumerate}
 \subsubsection{入门属性}
+\red{重点！}
+\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-demo-0}{演示代码地址}}}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/vueoptions.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{代码演示结果} %最终文档中希望显示的图片标题
+\end{figure}
 \begin{enumerate}
     \item \orange{el - 挂载点}
           \begin{itemize}
@@ -306,11 +313,12 @@
           \end{itemize}
     \item \orange{data - 内部数据}
           \begin{itemize}
-              \item 支持对象和函数，优先用函数
+              \item 支持对象和函数，优先用函数，如果不这样，组件间就会共用data
           \end{itemize}
     \item \orange{methods - 方法}
           \begin{itemize}
               \item 事件处理函数或者是普通函数
+              \item 每次执行都会调用，可能是毫无意义的，这个时候就需要computed
           \end{itemize}
     \item \orange{components}
           \begin{itemize}
@@ -322,7 +330,7 @@
               \item created - 实例出现在内存中
               \item mounted - 实例出现在页面中
               \item updated - 实例更新了
-              \item destroyed - 实例从页面和内存中消亡了(可用切换visible演示)
+              \item destroyed - 实例从页面和内存中消亡了(具体看代码演示)
           \end{itemize}
     \item \orange{props - 外部数据}
           \begin{itemize}
@@ -333,6 +341,55 @@
           \end{itemize}
 \end{enumerate}
 \section{数据响应式}
+\subsection{Vue对data做了什么}
+\subsubsection{小实验}
+\begin{enumerate}
+    \item \orange{data变了}
+          \begin{itemize}
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index0.html}{示例代码}}}
+              \item myData居然变了
+              \item 一开始是\{n:0\},传给new Vue之后立马变成\{n:(...)\}
+              \item \{n:(...)\}是个什么玩意，为什么表现和\{n:0\}一致？
+              \item 需要先学习一下es6的\yellow{getter和setter}
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index1.html}{示例代码}}}
+              \item 理解{n:(...)}还需要学习一下\yellow{Object.defineProperty}
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index2.html}{示例代码}}}
+              \item 代理模式继续理解
+              \item 注意代码思路，研究方法比知识本身更重要，不读源码也能了解真相
+          \end{itemize}
+\end{enumerate}
+\subsubsection{小结}
+\begin{enumerate}
+    \item \orange{Object.defineProperty}
+          \begin{itemize}
+              \item 可以给对象添加属性value
+              \item 可以给对象添加getter/setter
+              \item getter/setter用于对属性的读写进行监控
+          \end{itemize}
+    \item \orange{啥是代理(设计模式)}
+          \begin{itemize}
+              \item 对myData对象的属性读写，全权由另一个对象vm负责
+              \item 那么vm就是myData的代理(类比房东租房)
+              \item 比如myData.n不用，便要用vm.n来操作myData.n
+          \end{itemize}
+    \item \orange{vm=new Vue(\{data:myData\})}
+          \begin{itemize}
+              \item 一，会让vm成为myData的代理(proxy)
+              \item 二，会对myData的所有属性进行监控
+              \item 为什么要监控，为了防止myData的属性变了，vm不知道
+              \item vm知道了又如何？知道属性变了就可以调用render(data)呀！
+              \item UI=render(data)
+          \end{itemize}
+\end{enumerate}
+\subsubsection{示意图}
+\subsection{深入理解数据响应式}
+\subsection{Vue的bug}
+\subsubsection{Vue.set和this.\$set}
+\subsubsection{data中有数组怎么办？}
+\subsubsection{ES6写法}
+\subsubsection{ES5写法-原型}
+\subsection{总结}
+\subsection{练习题}
 \section{computed和watch}
 \section{模板，指令与修饰符}
 \section{进阶构造属性}
