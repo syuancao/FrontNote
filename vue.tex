@@ -382,14 +382,121 @@
           \end{itemize}
 \end{enumerate}
 \subsubsection{示意图}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/data-response.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{如果data有多个属性n,m,k, 那么就会有get n/get m/get k等} %最终文档中希望显示的图片标题
+\end{figure}
 \subsection{深入理解数据响应式}
+\begin{enumerate}
+    \item \orange{什么是响应式}
+          \begin{itemize}
+              \item 我打你一拳，你会喊疼，那你就是响应式的
+              \item 若一个物体能对外界的刺激做出反应，它就是响应式的
+          \end{itemize}
+    \item \orange{Vue的data是响应式}
+          \begin{itemize}
+              \item const vm = new Vue({data:{n:0}})
+              \item 我如果修改vm.n，那么UI中的n就会响应我
+              \item Vue2通过Object.defineProperty来实现数据响应式
+          \end{itemize}
+\end{enumerate}
 \subsection{Vue的bug}
+\begin{enumerate}
+    \item \orange{Object.defineProperty的问题}
+          \begin{itemize}
+              \item Object.defineProperty(obj, 'n', \{...\})
+              \item 必须要有一个'n'，才能监听&代理obj.n
+              \item 如果前端开发者比较水，没有给n怎么办
+              \item 示例一：Vue会给出一个警告
+              \item 示例二：Vue只会检查第一层属性
+              \item 此时如果我点击set b，请问视图中会显示1吗？
+              \item 答案是：不会
+              \item 为什么：因为Vue没办法监听一开始不存在的obj.b
+          \end{itemize}
+    \item \orange{解决办法}
+          \begin{itemize}
+              \item 一，那我把key都声明好，后面不再加属性不就行了
+              \item 使用Vue.set或者this.\$set
+          \end{itemize}
+\end{enumerate}
 \subsubsection{Vue.set和this.\$set}
+\begin{enumerate}
+    \item \orange{作用}
+          \begin{itemize}
+              \item 新增key
+              \item 自动创建代理和监听(如果没有创建过)
+              \item 触发UI更新(但并不会立即更新)
+          \end{itemize}
+    \item \orange{举例}
+          \begin{itemize}
+              \item this.\$set(this.object, 'm', 100)
+          \end{itemize}
+\end{enumerate}
 \subsubsection{data中有数组怎么办？}
+\begin{enumerate}
+    \item \orange{你没法提前声明所有key}
+          \begin{itemize}
+              \item 示例1：数组的长度可以一直增加，下标就是key
+              \item 你看，你没有办法提前把数组的key都声明出来
+              \item Vue也不能检测对你新增了下标
+              \item 难道每次改数组都要用Vue.set或者this.\$set
+          \end{itemize}
+    \item \orange{尤雨溪的做法}
+          \begin{itemize}
+              \item 篡改数组的API，见文档中变异方法章节
+              \item 这7个API都会被Vue篡改，调用后会更新UI
+              \item 如何篡改见下面代码
+          \end{itemize}
+\end{enumerate}
 \subsubsection{ES6写法}
+\yellow{注：这不代表Vue的真实实现，但基本思路是这样，程序员不需要看源码也能实现出来的}
+\begin{lstlisting}
+    class VueArray extends Array {
+        push(...args) {
+            const oldLength = this.length //this 就是当前数组
+            super.push(...args)
+            console.log('你push了')
+            for(let i = oldLength; i < this.length; i++) {
+                Vue.set(this, i, this[i])
+                //将每个新增的key都告诉Vue
+            }
+        }
+    }
+\end{lstlisting}
 \subsubsection{ES5写法-原型}
+\yellow{这个需要前端基础笔记中原型链的知识}
+\begin{lstlisting}
+    const vueArrayPrototype = {
+        push: function() {
+            console.log('你push了')
+            return Array.prototype.push.apply(this, arguments)
+        }
+    }
+    vueArrayPrototype.__proto__ = Array.prototype
+    //上面这句话用的不是标准属性，仅学习使用
+
+    const array = Object.create(vueArrayPrototype)
+    array.push(1)
+\end{lstlisting}
 \subsection{总结}
-\subsection{练习题}
+\begin{enumerate}
+    \item \orange{对象中新增的key}
+          \begin{itemize}
+              \item Vue没有办法事先监听和代理
+              \item 要使用set来新增key，创建监听和代理，更新UI
+              \item 最好提前把属性都写出来，不要新增key
+              \item 但数组做不到不新增key
+          \end{itemize}
+    \item \orange{数组中新增的key}
+          \begin{itemize}
+              \item 也可用set来新增key，更新UI
+              \item 不过尤雨溪篡改了7个API方便你对数组进行增删
+              \item 这7个API会\yellow{自动处理监听和代理}，并更新UI
+              \item 结论：数组新增key最好通过7个API
+          \end{itemize}
+\end{enumerate}
+\subsection{刁钻的题}
 \section{computed和watch}
 \section{模板，指令与修饰符}
 \section{进阶构造属性}
