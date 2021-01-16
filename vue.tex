@@ -408,8 +408,10 @@
               \item Object.defineProperty(obj, 'n', \{...\})
               \item 必须要有一个'n'，才能监听\&代理obj.n
               \item 如果前端开发者比较水，没有给n怎么办
-              \item 示例一：Vue会给出一个警告
-              \item 示例二：Vue只会检查第一层属性
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index3.html}{示例一}}}
+              \item 如果data为空，不会显示undefined或null，只会给出一个警告
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index4.html}{示例二}}}
+              \item Vue只会检查第一层属性
               \item 此时如果我点击set b，请问视图中会显示1吗？
               \item 答案是：不会
               \item 为什么：因为Vue没办法监听一开始不存在的obj.b
@@ -437,14 +439,15 @@
 \begin{enumerate}
     \item \orange{你没法提前声明所有key}
           \begin{itemize}
-              \item 示例1：数组的长度可以一直增加，下标就是key
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index5.html}{示例代码}}}
+              \item 数组的长度可以一直增加，下标就是key
               \item 你看，你没有办法提前把数组的key都声明出来
               \item Vue也不能检测对你新增了下标
               \item 难道每次改数组都要用Vue.set或者this.\$set
           \end{itemize}
     \item \orange{尤雨溪的做法}
           \begin{itemize}
-              \item 篡改数组的API，见文档中变异方法章节
+              \item 篡改数组的API，见vue文档中变异方法章节
               \item 这7个API都会被Vue篡改，调用后会更新UI
               \item 如何篡改见下面代码
           \end{itemize}
@@ -497,8 +500,383 @@
           \end{itemize}
 \end{enumerate}
 \subsection{刁钻的题}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.7\textwidth]{image/vuebug.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{刁钻的题} %最终文档中希望显示的图片标题
+\end{figure}
+\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-data-response/index6.html}{刁钻的题目代码地址}}}
+\begin{enumerate}
+    \item \orange{分析}
+          \begin{itemize}
+              \item span-b 之所以会显示 b，是因为视图在显示 span-a 的 a2 时，顺便更新了 span-b
+          \end{itemize}
+    \item \orange{要理解为什么 span-b 会更新，要点是理解视图更新其实是异步的。}
+          \begin{itemize}
+              \item 当我们让 a 从 'a1' 变成 'a2' 时，Vue 会监听到这个变化，
+              \item 但是 Vue 并不能马上更新视图，因为 Vue 是使用 Object.defineProperty 这样的方式来监听变化的，
+              \item 监听到变化后会创建一个视图更新任务到任务队列里。（文档有写）
+              \item 所以在视图更新之前，要先把余下的代码运行完才行，也就是会运行 b = `b'
+              \item 等到视图更新的时候，由于 Vue 会去做 diff（文档有写）
+              \item 于是 Vue 就会发现 a 和 b 都变了，自然会去更新 span-a 和 span-b
+          \end{itemize}
+\end{enumerate}
 \section{computed和watch}
+\subsection{进阶属性}
+\begin{enumerate}
+    \item \orange{computed - 计算属性}
+          \begin{itemize}
+              \item 不需要加括号
+              \item 它会根据依赖是否变化来缓存
+          \end{itemize}
+    \item \orange{watch - 监听}
+          \begin{itemize}
+              \item 一旦data变化，就执行的函数
+              \item options.watch用法
+              \item this.\$watch用法
+              \item deep, immediate含义
+          \end{itemize}
+    \item \orange{directives - 指令}
+          \begin{itemize}
+              \item 内置指令v-if/v-for/v-bind/v-on
+              \item 自定义指令，如v-focus
+              \item 指令是为了\yellow{减少重复}的DOM操作
+          \end{itemize}
+    \item \orange{mixin - 混入}
+          \begin{itemize}
+              \item 重复三次之后的出路
+              \item 混入v.s.全局混入
+              \item 选项自动合并
+              \item 混入就是为了\yellow{减少重复}的构造选项
+          \end{itemize}
+    \item \orange{extends - 继承}
+          \begin{itemize}
+              \item 先了解一下Vue.extend
+              \item 你觉得用了mixin还是重复
+              \item 于是你自己写了一个View,它继承Vue
+              \item 你还可以预先定义其他构造选项
+              \item 那为什么不用ES6的extends呢？
+          \end{itemize}
+    \item \orange{provide/inject}
+          \begin{itemize}
+              \item 爷爷想和孙子讲话怎么办
+              \item 祖宗想跟它的所有后代讲话怎么办
+              \item 答案是全局变量，但是全局变量太low
+              \item 所以我们需要\red{局部的}\yellow{全局变量}
+          \end{itemize}
+\end{enumerate}
+\subsection{复习一下响应式原理}
+\begin{enumerate}
+    \item \orange{options.data}
+          \begin{itemize}
+              \item 会被Vue监听
+              \item 会被Vue实例代理
+              \item 每次对data的读写都会被Vue监控
+              \item Vue会在data变化时更新UI
+          \end{itemize}
+    \item \orange{本节内容}
+          \begin{itemize}
+              \item data变化时除了更新UI,还能做点啥？
+          \end{itemize}
+\end{enumerate}
+\subsection{computed - 计算属性}
+\begin{enumerate}
+    \item \orange{用途}
+          \begin{itemize}
+              \item 被计算出来的属性就是\yellow{计算属性}
+              \item 例1：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index0.html}{用户名展示}}}
+              \item 例2：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index1.html}{列表展示不用computed}}}
+              \item 例3：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index2.html}{列表展示用computed}}}
+          \end{itemize}
+    \item \orange{缓存}
+          \begin{itemize}
+              \item 如果依赖的属性没有变化，就不会重新计算
+              \item getter/setter默认不会做缓存，Vue做了特殊处理
+              \item 如何缓存？看\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index3.html}{缓存示例}}}(仅供参考学习，不代表Vue真实实现)
+          \end{itemize}
+\end{enumerate}
+\subsection{Watch - 监听}
+\begin{enumerate}
+    \item \orange{用途}
+          \begin{itemize}
+              \item 当数据变化时，执行一个函数
+              \item 例1：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index4.html}{异步撤销}}}
+              \item 例2：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index5.html}{模拟computed}}}说实话，这样做很傻
+          \end{itemize}
+    \item \orange{何谓变化？}
+          \begin{itemize}
+              \item 看\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index6.html}{示例}}}
+              \item obj原本是\{a:'a'\}, 现在obj=\{a:'a'\}, 请问
+              \item obj变了没有？变了。obj.a变了没有？，没变。
+              \item 简单类型看值，复杂类型(对象)看地址
+              \item 这其实就是===的规则
+          \end{itemize}
+    \item \orange{语法}
+          \begin{itemize}
+              \item 语法1
+                    \begin{lstlisting}
+                watch: {
+                //o1: ()=>{} //别用这种，这里的this是全局对象
+                o2: function(value, oldValue){},
+                o3(){},
+                o4: [f1, f2],
+                o5: 'methodName',
+                o6: {handler:fn, deep:true, immediate:true},
+                'object.a': function() {}
+                } 
+            \end{lstlisting}
+              \item 语法2
+                    \begin{lstlisting}
+                            vm.$watch('xxx', fn, {deep: .., immediate: ..})
+                            //其中'xxx'可以改为一个返回字符串的函数
+                        \end{lstlisting}
+          \end{itemize}
+    \item \orange{deep:true是干什么的}
+          \begin{itemize}
+              \item 如果object.a变了，请问object算不算也变了
+              \item 如果你选哟答案式也变了，那么就用deep:true
+              \item 如果你需要答案是没有变，那么就用deep:false
+              \item deep的意思是，监听object的时候是否往深了看
+          \end{itemize}
+\end{enumerate}
 \section{模板，指令与修饰符}
+\subsection{模板template三种写法}
+\begin{enumerate}
+    \item \orange{一，Vue完整版吗，写在HTML里}
+          \begin{lstlisting}
+                <div id=xxx>
+                    {{n}}
+                    <button @click="add">+1</button>
+                </div>
+
+                new Vue({
+                    el: '#xxx',
+                    data:{n:0}, //data可以改成函数
+                    method:{add(){}}
+                })
+            \end{lstlisting}
+    \item \orange{二，Vue完整版，写在选项里}
+          \begin{lstlisting}
+            <div id=app>
+            </div>
+
+            new Vue({
+                template: `
+                    <div>
+                        {{n}}
+                        <button @click="add">+1</button>
+                    </div>`,
+                data:{n:0}, //data可以改成函数
+                methods:{add(){ this.n += 1 }}
+            }).$mount('#app')
+        //注意一个细节: div#app会被替代
+          \end{lstlisting}
+    \item \orange{三，非Vue完整版，配合xxx.vue文件}
+          \begin{lstlisting}
+            <template>
+                <div>
+                    {{n}}
+                    <button @click="add">
+                    +1
+                    </button>
+                </div>
+            </template>
+            <script>
+                export default {
+                    data() { return {n:0} },
+                    //data必须为函数
+                    methods:{add(){ this.n += 1 }}
+                }
+            </script>
+            <style>这里写CSS</style>
+            //然后在另一个地方写如下代码
+            import xxx from './xxx.vue'
+            //xxx 是一个options对象
+            new Vue({
+                render: h => h(xxx)
+            }).$mount('#app')
+          \end{lstlisting}
+\end{enumerate}
+\subsection{模板里有哪些语法}
+\orange{我们把HTML模板叫做template}
+\subsubsection{展示内容}
+\begin{enumerate}
+    \item \orange{表达式}
+          \begin{itemize}
+              \item \{\{ object.a \}\} 表达式
+              \item \{\{ n + 1 \}\} 可以写任何运算
+              \item \{\{ fn(n) \}\} 可以调用函数
+              \item 如果值为 undefined 或 null 就不显示
+              \item 另一种写法为 <div v-text=``表达式''></div> (这种写法没有意义，大家都用上面的)
+          \end{itemize}
+    \item \orange{HTML内容}
+          \begin{itemize}
+              \item 假设 data.x 值为 <strong>hi</strong>
+              \item <div v-html=``x''></div> 即可显示粗体 hi
+          \end{itemize}
+    \item \orange{我就想展示 {{ n }}}
+          \begin{itemize}
+              \item <div v-pre>\{\{ n \}\}</div>
+              \item v-pre 不会对模板进行编译
+          \end{itemize}
+\end{enumerate}
+\subsubsection{绑定属性}
+\begin{enumerate}
+    \item \orange{绑定src}
+          \begin{itemize}
+              \item <img v-bind:src=``x'' />
+          \end{itemize}
+    \item \orange{v-bind:简写为:}
+          \begin{itemize}
+              \item <img :src=``x'' />
+          \end{itemize}
+    \item \orange{绑定对象}
+          \begin{itemize}
+              \item <div :style=``{border: `1px solid red', height:100}''注意这里可以把`100px'写成100</div>
+          \end{itemize}
+\end{enumerate}
+\subsubsection{绑定事件}
+\begin{enumerate}
+    \item \orange{v-on:事件名}
+          \begin{itemize}
+              \item <button v-on:click=``add''>+1</button> 点击之后，Vue会运行add()
+              \item <button v-on:click=``xxx(1)''>xxx</button> 点击之后，Vue会运行xxx(1)
+              \item <button v-on:click=``n+=1''>+1</button> 点击之后，Vue会运行n+=1
+              \item 点击之后，Vue会运行n+=1，即发现\yellow{函数}就加括号调用之，否则直接运行代码
+              \item 这导致一个问题，如果xxx(1)返回一个函数咋办
+              \item \yellow{答：用Vue的人怎么可能想出这么复杂的用法}
+          \end{itemize}
+    \item \orange{缩写}
+          \begin{itemize}
+              \item <button @click=``n+=1''>+1</button>
+              \item 正常人都用缩写
+          \end{itemize}
+\end{enumerate}
+\subsubsection{条件判断}
+% \begin{enumerate}
+% \item 
+\orange{if...else}
+\begin{lstlisting}
+            <div v-if="x > 0">
+              x大于0
+            </div>
+            <div v-else-if="x===0">
+              x为0
+            </div>
+            <div v-else>
+              x小于0
+            </div>
+      \end{lstlisting}
+% \end{enumerate}
+\subsubsection{循环}
+% \begin{enumerate}
+% \item 
+\orange{for(value, key) in 对象或数组}
+\begin{lstlisting}
+            <ul>
+                <li v-for="(u,index) in users" :key="index">
+                    索引: {{index}} 值: {{u.name}}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="(value, name) in obj" :key="name">
+                    属性名: {{name}} 属性值: {{name}}
+                </li>
+            </ul>
+          \end{lstlisting}
+% \end{enumerate}
+\p
+坑预警: \yellow{:key=``index''有bug，后面讲}
+\subsubsection{显示隐藏}
+\begin{enumerate}
+    \item \orange{v-show}
+          \begin{lstlisting} 
+            <div v-show="n\%2===0'"> n 是偶数 </div> 
+        \end{lstlisting}
+          高手一般不用，用css切换
+    \item \orange{近似等于}
+          \begin{itemize}
+              \begin{lstlisting}
+    <div :style="{display:n%2===0?'block':'none'}"> n 是偶数 </div> 
+        \end{lstlisting}
+              \item 但你要注意，看得见的元素display不只有block
+              \item 如table的display为table
+              \item 如li的display为list-item
+          \end{itemize}
+\end{enumerate}
+\subsection{总结}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.3\textwidth]{image/template.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{总结} %最终文档中希望显示的图片标题
+\end{figure}
+\orange{Vue模板主要特点有}
+\begin{itemize}
+    \item 使用XML语法(不是HTML)
+    \item 使用\{\{\}\}插入表达式
+    \item 使用v-html v-on v-bind等指令操作DOM
+    \item 使用v-if v-for等指令实现条件判断和循环
+    \item v-if是什么时候出现在dom树里，v-show是什么时候展示出来(css隐藏的)
+\end{itemize}
+\subsection{指令Directive}
+\subsubsection{指令}
+\begin{enumerate}
+    \item \orange{什么是指令}
+          \begin{lstlisting} 
+            <div v-text="x"></div>
+            <div v-html="x"></div> 
+        \end{lstlisting}
+          以\yellow{v-}开头的东西就是指令
+    \item \orange{语法}
+          \begin{itemize}
+              \item v-\green{指令名}:\blue{参数}=\red{值}，如v-\green{on}:\blue{click}=\red{add}
+              \item 如果\red{值}里没有特殊字符，则可以不加引号
+              \item 有些指令没有参数和值，如 v-pre
+              \item 有些指令没有值，如 v-on:click.prevent
+          \end{itemize}
+\end{enumerate}
+\subsubsection{修饰符}
+\begin{enumerate}
+    \item \orange{有些指令支持修饰符}
+          \begin{itemize}
+              \item @click.stop=``add''表示阻止事件传播/冒泡
+              \item @click.prevent=``add''表示阻止默认动作\quad\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index0.html}{代码示例}}}
+              \item @click.stop.prevent=``add''同时表示两种意思
+          \end{itemize}
+    \item \orange{一共有多少修饰符呢？}
+          \begin{itemize}
+              \item v-on支持的有\red{.{keycode|keyAlias}}\quad\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index1.html}{代码示例}}}
+              \item \red{.stop.prevent}.capture.self.once.passive.native
+              \item 快捷键相关.ctrl.alt.shift.meta.exact
+              \item 鼠标相关.left.right.middle
+              \item v-bind支持的有.prop.camel\red{.sync}
+              \item v-model支持的有\purple{.lazy.number.trim}
+          \end{itemize}
+\end{enumerate}
+\subsubsection{.sync修饰符}
+\begin{enumerate}
+    \item \orange{场景描述}
+          \begin{itemize}
+              \item 爸爸给儿子钱，儿子要花钱怎么办 \quad\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index2.html}{代码示例}}}
+              \item 答: 儿子打电话(触发事件)向爸爸要钱
+              \item Vue规则:组件不能修改props外部数据
+              \item Vue规则:this.\$emit可以触发事件，并传参
+              \item Vue规则:\$event可以获取\$emit的参数
+          \end{itemize}
+    \item \orange{由于这种场景很场景}
+          \begin{itemize}
+              \item 所以尤雨溪发明了.sync，示例
+              \item :money.sync=``total''等价于
+              \item :money=``total''v-0:update:money=``total=\$event''
+          \end{itemize}
+\end{enumerate}
+\subsubsection{搞清楚这4个修饰符就行了}
+\begin{enumerate}
+    \item @click.stop=``xxx''
+    \item @click.prevent=``xxx''
+    \item @keypress.enter=``xxx''
+    \item :money.sync=``total''
+\end{enumerate}
 \section{进阶构造属性}
 \section{表单与v-model}
 \section{Vue Router-前端路由实现思路}
