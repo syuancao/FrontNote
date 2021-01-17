@@ -857,7 +857,7 @@
 \begin{enumerate}
     \item \orange{场景描述}
           \begin{itemize}
-              \item 爸爸给儿子钱，儿子要花钱怎么办 \quad\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index2.html}{代码示例}}}
+              \item 爸爸给儿子钱，儿子要花钱怎么办 \quad\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-model/vue-sync}{代码示例}}}
               \item 答: 儿子打电话(触发事件)向爸爸要钱
               \item Vue规则:组件不能修改props外部数据
               \item Vue规则:this.\$emit可以触发事件，并传参
@@ -867,7 +867,7 @@
           \begin{itemize}
               \item 所以尤雨溪发明了.sync，示例
               \item :money.sync=``total''等价于
-              \item :money=``total''v-0:update:money=``total=\$event''
+              \item :money=``total''v-on:update:money=``total=\$event''
           \end{itemize}
 \end{enumerate}
 \subsubsection{搞清楚这4个修饰符就行了}
@@ -878,6 +878,161 @@
     \item :money.sync=``total''
 \end{enumerate}
 \section{进阶构造属性}
+\yellow{directive, mixins, extends, provide, inject}
+\subsection{Directives}
+\yellow{指令}
+\subsubsection{自义定指令}
+\begin{enumerate}
+    \item \orange{我们已经学了一些内置指令}
+          \begin{itemize}
+              \item v-if v-for v-show v-html等
+          \end{itemize}
+    \item \orange{今天学习如何自己造一个指令}
+          \begin{itemize}
+              \item 目标：造出v-x，点击即出现一个x
+          \end{itemize}
+\end{enumerate}
+\subsubsection{两种写法}
+\begin{enumerate}
+    \item \orange{一，声明一个全局指令}
+          \begin{itemize}
+              \item Vue.directive('x', directiveOptions)你就可以在任何组件里用v-x了
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-advanced-attr/index0.html}{代码示例}}}
+          \end{itemize}
+    \item \orange{二，声明一个局部指令}
+          \begin{lstlisting}
+            new Vue({
+                ...,
+                directives: {
+                    "x": directiveOptions
+                }
+            })
+            //v-x只能用在该实例中
+          \end{lstlisting}
+\end{enumerate}
+\subsubsection{directiveOptions}
+\begin{enumerate}
+    \item \orange{五个函数属性}
+          \begin{itemize}
+              \item bind(el, info, vnode, oldVnode) - 类似created
+              \item inserted(参数同上) - 类似mounted
+              \item update(参数同上) - 类似updated
+              \item componentUpdated(参数同上) - 用的不多
+              \item unbind(参数同上) - 类似destroyed
+          \end{itemize}
+    \item \orange{自制v-on2指令，模仿v-on}
+          \begin{itemize}
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-advanced-attr/index1.html}{代码地址}}}
+          \end{itemize}
+\end{enumerate}
+\subsubsection{指令的作用}
+\begin{enumerate}
+    \item \orange{主要用于DOM操作}
+          \begin{itemize}
+              \item Vue实例/组件用于数据绑定，事件监听，DOM更新
+              \item Vue指令主要目的就是原生DOM操作
+          \end{itemize}
+    \item \orange{减少重复}
+          \begin{itemize}
+              \item 如果某个DOM操作你经常使用，就可以封装为指令
+              \item 如果某个DOM操作比较复杂，也可以封装为指令
+          \end{itemize}
+\end{enumerate}
+\subsection{mixins}
+\yellow{混入，混入就是TM复制，前端就喜欢把简单概念搞复杂}
+\subsubsection{减少重复}
+\begin{enumerate}
+    \item \orange{类比}
+          \begin{itemize}
+              \item directives的作用是减少DOM操作的重复
+              \item mixins的作用是减少data, methods, 钩子的重复
+          \end{itemize}
+    \item \orange{场景描述}
+          \begin{itemize}
+              \item 假设我们需要在每个组件上添加name和time
+              \item 在created, beforeDestroy时，打出提示，并报出存活时间
+              \item 一共由五个组件，请问你怎么做？
+              \item 一，给每个组件添加data和钩子，共5次
+              \item 二，或者使用mixins减少重复
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-advanced-attr/vue-mixin-extends-provide-inject}{已完成的示例地址}}}
+          \end{itemize}
+    \item \orange{mixins技巧}
+          \begin{itemize}
+              \item 选项智能合并
+              \item Vue.mixin全局使用(不推荐)
+          \end{itemize}
+\end{enumerate}
+\subsection{extends}
+\yellow{继承，extends是比mixins更抽象一点的封装}
+\yellow{如果你嫌写五次mixins麻烦，可以考虑extends一次，不过实际工作中用得很少}
+\subsubsection{减少重复}
+\begin{enumerate}
+    \item \orange{与mixins同样的需求}
+          \begin{itemize}
+              \item 不想要每次都写一个mixins，咋办？
+              \item 你可以使用Vue.extend或options.extends
+          \end{itemize}
+    \item \orange{代码演示}
+          \begin{lstlisting}
+            const MyVue = Vue.extend({
+                data(){ return {name:'',time:undefined} },
+                created(){
+                if(!this.name){console.error('no name!')}
+                this.time = new Date()
+                },
+                beforeDestroy(){
+                const duration = (new Date()) - this.time
+                console.log(`${this.name} ${duration}`)
+                }
+            })
+            //然后我们就可以使用new MyVue(options)了
+          \end{lstlisting}
+    \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-advanced-attr/vue-mixin-extends-provide-inject}{完整代码地址}}}
+\end{enumerate}
+\subsection{provide和inject}
+\yellow{提供和注入}
+\subsubsection{使用举例}
+\begin{enumerate}
+    \item \orange{需求}
+          \begin{itemize}
+              \item 一键换肤功能:默认蓝色，可以切换为红色
+              \item 文字大小:默认正常，可以改成大或小
+              \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-advanced-attr/vue-mixin-extends-provide-inject}{已完成的示例}}}
+              \item 祖先栽树(provide)，后人乘凉(inject)
+          \end{itemize}
+    \item \orange{总结}
+          \begin{itemize}
+              \item 作用:大范围的data和method等共用
+              \item 注意:不能只传themeName不传changeTheme，因为themeName的值是被复制给provide的
+              \item 思考:传引用可以吗？可以，但是不推荐，因为容易失控
+          \end{itemize}
+\end{enumerate}
+\subsection{总结}
+\begin{enumerate}
+    \item \orange{directives指令}
+          \begin{itemize}
+              \item 全局用Vue.directive('x',{...})
+              \item 局部用options.directives
+              \item 作用是减少DOM操作相关重复代码
+          \end{itemize}
+    \item \orange{mixins混入}
+          \begin{itemize}
+              \item 全局用Vue.mixin({...})
+              \item 局部用options.mixins:[mixin1, mixin2]
+              \item 作用是减少options里的重复
+          \end{itemize}
+    \item \orange{extends继承/扩展}
+          \begin{itemize}
+              \item 全局用Vue.extend({...})
+              \item 局部用options.extends:{...}
+              \item 作用跟mixins差不多，只是形式不同
+          \end{itemize}
+    \item \orange{provide/inject提供和注入}
+          \begin{itemize}
+              \item 祖先提供东西，后代注入东西
+              \item 作用是大范围，隔N代共享信息
+          \end{itemize}
+\end{enumerate}
 \section{表单与v-model}
 \section{Vue Router-前端路由实现思路}
 \section{深入理解Vue动画原理}
