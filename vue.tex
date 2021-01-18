@@ -601,7 +601,7 @@
           \begin{itemize}
               \item 当数据变化时，执行一个函数
               \item 例1：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index4.html}{异步撤销}}}
-              \item 例2：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index5.html}{模拟computed}}}说实话，这样做很傻
+              \item 例2：\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-computed-watch/index5.html}{模拟computed}}}  说实话，这样做很傻
           \end{itemize}
     \item \orange{何谓变化？}
           \begin{itemize}
@@ -1034,6 +1034,39 @@
           \end{itemize}
 \end{enumerate}
 \section{表单与v-model}
+\begin{enumerate}
+    \item \orange{基本用法}
+          \begin{itemize}
+              \item input/textarea/checkbox/radio/select/form
+          \end{itemize}
+    \item \orange{修饰符}
+          \begin{itemize}
+              \item .lazy/.number/.trim
+          \end{itemize}
+    \item \orange{v-model}
+          \begin{itemize}
+              \item 面试官问你Vue的双向绑定，其实就是在问v-model
+              \item 但是实际上v-model是v-bind:value和v-on:input的语法糖
+              \item v-on:input="???"这里需要自己背下来
+          \end{itemize}
+    \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index2.html}{v-model代码演示地址}}}
+    \item \tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/blob/master/VUE/vue-model/index3.html}{自制input代码地址}}}
+    \item \orange{v-model是从Angular1的ngModel借鉴来的}
+\end{enumerate}
 \section{Vue Router-前端路由实现思路}
+\subsection{路由基本概念}
+\red{路由，分发，路由表，默认路由，404路由/保底路由，嵌套路由}
+\subsection{hash模式}
+\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-router/hash-router}{hash模式代码地址}}}
+\subsection{history模式}
+\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-router/history-router}{history模式代码地址}}}
+\subsection{memory模式}
+\tiffany{\underline{\href{https://github.com/syuancao/FrontNotePractice/tree/master/VUE/vue-router/memory-router}{memory模式代码地址}}}
+\subsection{三种模式router总结}
+\begin{figure}[H] %H为当前位置，!htb为忽略美学标准，htbp为浮动图形
+    \centering %图片居中
+    \includegraphics[width=0.8\textwidth]{image/router.png} %插入图片，[]中设置图片大小，{}中是图片文件名
+    \caption{三种模式router总结} %最终文档中希望显示的图片标题
+\end{figure}
 \section{深入理解Vue动画原理}
 \end{document}
